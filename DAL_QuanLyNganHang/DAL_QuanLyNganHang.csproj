@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DTO_QuanLyNganHang\DTO_QuanLyNganHang.csproj" />
+  </ItemGroup>
+
 </Project>
