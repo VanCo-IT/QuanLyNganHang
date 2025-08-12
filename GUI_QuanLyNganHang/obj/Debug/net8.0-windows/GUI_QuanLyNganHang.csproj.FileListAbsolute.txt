@@ -1,0 +1,17 @@
+D:\VanCo\A_QuanLyNganHang\QuanLyNganHang\GUI_QuanLyNganHang\bin\Debug\net8.0-windows\GUI_QuanLyNganHang.exe
+D:\VanCo\A_QuanLyNganHang\QuanLyNganHang\GUI_QuanLyNganHang\bin\Debug\net8.0-windows\GUI_QuanLyNganHang.deps.json
+D:\VanCo\A_QuanLyNganHang\QuanLyNganHang\GUI_QuanLyNganHang\bin\Debug\net8.0-windows\GUI_QuanLyNganHang.runtimeconfig.json
+D:\VanCo\A_QuanLyNganHang\QuanLyNganHang\GUI_QuanLyNganHang\bin\Debug\net8.0-windows\GUI_QuanLyNganHang.dll
+D:\VanCo\A_QuanLyNganHang\QuanLyNganHang\GUI_QuanLyNganHang\bin\Debug\net8.0-windows\GUI_QuanLyNganHang.pdb
+D:\VanCo\A_QuanLyNganHang\QuanLyNganHang\GUI_QuanLyNganHang\obj\Debug\net8.0-windows\GUI_QuanLyNganHang.frmChaoMung.resources
+D:\VanCo\A_QuanLyNganHang\QuanLyNganHang\GUI_QuanLyNganHang\obj\Debug\net8.0-windows\GUI_QuanLyNganHang.csproj.GenerateResource.cache
+D:\VanCo\A_QuanLyNganHang\QuanLyNganHang\GUI_QuanLyNganHang\obj\Debug\net8.0-windows\GUI_QuanLyNganHang.GeneratedMSBuildEditorConfig.editorconfig
+D:\VanCo\A_QuanLyNganHang\QuanLyNganHang\GUI_QuanLyNganHang\obj\Debug\net8.0-windows\GUI_QuanLyNganHang.AssemblyInfoInputs.cache
+D:\VanCo\A_QuanLyNganHang\QuanLyNganHang\GUI_QuanLyNganHang\obj\Debug\net8.0-windows\GUI_QuanLyNganHang.AssemblyInfo.cs
+D:\VanCo\A_QuanLyNganHang\QuanLyNganHang\GUI_QuanLyNganHang\obj\Debug\net8.0-windows\GUI_QuanLyNganHang.csproj.CoreCompileInputs.cache
+D:\VanCo\A_QuanLyNganHang\QuanLyNganHang\GUI_QuanLyNganHang\obj\Debug\net8.0-windows\GUI_QuanLyNganHang.sourcelink.json
+D:\VanCo\A_QuanLyNganHang\QuanLyNganHang\GUI_QuanLyNganHang\obj\Debug\net8.0-windows\GUI_QuanLyNganHang.dll
+D:\VanCo\A_QuanLyNganHang\QuanLyNganHang\GUI_QuanLyNganHang\obj\Debug\net8.0-windows\refint\GUI_QuanLyNganHang.dll
+D:\VanCo\A_QuanLyNganHang\QuanLyNganHang\GUI_QuanLyNganHang\obj\Debug\net8.0-windows\GUI_QuanLyNganHang.pdb
+D:\VanCo\A_QuanLyNganHang\QuanLyNganHang\GUI_QuanLyNganHang\obj\Debug\net8.0-windows\GUI_QuanLyNganHang.genruntimeconfig.cache
+D:\VanCo\A_QuanLyNganHang\QuanLyNganHang\GUI_QuanLyNganHang\obj\Debug\net8.0-windows\ref\GUI_QuanLyNganHang.dll
