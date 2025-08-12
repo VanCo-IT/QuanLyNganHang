@@ -1,0 +1,16 @@
+D:\VanCo\A_QuanLyNganHang\QuanLyNganHang\DAL_QuanLyNganHang\bin\Debug\net8.0\DAL_QuanLyNganHang.deps.json
+D:\VanCo\A_QuanLyNganHang\QuanLyNganHang\DAL_QuanLyNganHang\bin\Debug\net8.0\DAL_QuanLyNganHang.dll
+D:\VanCo\A_QuanLyNganHang\QuanLyNganHang\DAL_QuanLyNganHang\bin\Debug\net8.0\DAL_QuanLyNganHang.pdb
+D:\VanCo\A_QuanLyNganHang\QuanLyNganHang\DAL_QuanLyNganHang\bin\Debug\net8.0\DTO_QuanLyNganHang.dll
+D:\VanCo\A_QuanLyNganHang\QuanLyNganHang\DAL_QuanLyNganHang\bin\Debug\net8.0\DTO_QuanLyNganHang.pdb
+D:\VanCo\A_QuanLyNganHang\QuanLyNganHang\DAL_QuanLyNganHang\obj\Debug\net8.0\DAL_QuanLyNganHang.csproj.AssemblyReference.cache
+D:\VanCo\A_QuanLyNganHang\QuanLyNganHang\DAL_QuanLyNganHang\obj\Debug\net8.0\DAL_QuanLyNganHang.GeneratedMSBuildEditorConfig.editorconfig
+D:\VanCo\A_QuanLyNganHang\QuanLyNganHang\DAL_QuanLyNganHang\obj\Debug\net8.0\DAL_QuanLyNganHang.AssemblyInfoInputs.cache
+D:\VanCo\A_QuanLyNganHang\QuanLyNganHang\DAL_QuanLyNganHang\obj\Debug\net8.0\DAL_QuanLyNganHang.AssemblyInfo.cs
+D:\VanCo\A_QuanLyNganHang\QuanLyNganHang\DAL_QuanLyNganHang\obj\Debug\net8.0\DAL_QuanLyNganHang.csproj.CoreCompileInputs.cache
+D:\VanCo\A_QuanLyNganHang\QuanLyNganHang\DAL_QuanLyNganHang\obj\Debug\net8.0\DAL_QuanLyNganHang.sourcelink.json
+D:\VanCo\A_QuanLyNganHang\QuanLyNganHang\DAL_QuanLyNganHang\obj\Debug\net8.0\DAL_Quan.23BE6133.Up2Date
+D:\VanCo\A_QuanLyNganHang\QuanLyNganHang\DAL_QuanLyNganHang\obj\Debug\net8.0\DAL_QuanLyNganHang.dll
+D:\VanCo\A_QuanLyNganHang\QuanLyNganHang\DAL_QuanLyNganHang\obj\Debug\net8.0\refint\DAL_QuanLyNganHang.dll
+D:\VanCo\A_QuanLyNganHang\QuanLyNganHang\DAL_QuanLyNganHang\obj\Debug\net8.0\DAL_QuanLyNganHang.pdb
+D:\VanCo\A_QuanLyNganHang\QuanLyNganHang\DAL_QuanLyNganHang\obj\Debug\net8.0\ref\DAL_QuanLyNganHang.dll
