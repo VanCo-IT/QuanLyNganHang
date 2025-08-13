@@ -30,17 +30,28 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChaoMung));
             pnChaoMung = new Panel();
+            progressBar = new ProgressBar();
+            pnChaoMung.SuspendLayout();
             SuspendLayout();
             // 
             // pnChaoMung
             // 
             pnChaoMung.BackgroundImage = (Image)resources.GetObject("pnChaoMung.BackgroundImage");
             pnChaoMung.BackgroundImageLayout = ImageLayout.Stretch;
+            pnChaoMung.Controls.Add(progressBar);
             pnChaoMung.Dock = DockStyle.Fill;
             pnChaoMung.Location = new Point(0, 0);
             pnChaoMung.Name = "pnChaoMung";
             pnChaoMung.Size = new Size(884, 561);
             pnChaoMung.TabIndex = 0;
+            // 
+            // progressBar
+            // 
+            progressBar.Dock = DockStyle.Bottom;
+            progressBar.Location = new Point(0, 538);
+            progressBar.Name = "progressBar";
+            progressBar.Size = new Size(884, 23);
+            progressBar.TabIndex = 0;
             // 
             // frmChaoMung
             // 
@@ -50,11 +61,14 @@
             Controls.Add(pnChaoMung);
             Name = "frmChaoMung";
             Text = "frmChaoMung";
+            FormClosing += frmChaoMung_FormClosing;
+            pnChaoMung.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
         private Panel pnChaoMung;
+        private ProgressBar progressBar;
     }
 }
