@@ -28,12 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "frmChaoMung";
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChaoMung));
+            pnChaoMung = new Panel();
+            SuspendLayout();
+            // 
+            // pnChaoMung
+            // 
+            pnChaoMung.BackgroundImage = (Image)resources.GetObject("pnChaoMung.BackgroundImage");
+            pnChaoMung.BackgroundImageLayout = ImageLayout.Stretch;
+            pnChaoMung.Dock = DockStyle.Fill;
+            pnChaoMung.Location = new Point(0, 0);
+            pnChaoMung.Name = "pnChaoMung";
+            pnChaoMung.Size = new Size(884, 561);
+            pnChaoMung.TabIndex = 0;
+            // 
+            // frmChaoMung
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(884, 561);
+            Controls.Add(pnChaoMung);
+            Name = "frmChaoMung";
+            Text = "frmChaoMung";
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private Panel pnChaoMung;
     }
 }

@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTO_QuanLyNganHang", "DTO_Q
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UTIL_QuanLyNganHang", "UTIL_QuanLyNganHang\UTIL_QuanLyNganHang.csproj", "{D0D0C83F-DBAC-4EFA-9A98-41455B9DAE22}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI_QuanLyNganHang", "GUI_QuanLyNganHang\GUI_QuanLyNganHang.csproj", "{0F6674E3-6A09-4F2C-A6B4-CC648244BDFF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI_QuanLyNganHang", "GUI_QuanLyNganHang\GUI_QuanLyNganHang.csproj", "{60784DBB-6CCD-4D4A-B9A7-91B02FB46318}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{D0D0C83F-DBAC-4EFA-9A98-41455B9DAE22}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0D0C83F-DBAC-4EFA-9A98-41455B9DAE22}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0D0C83F-DBAC-4EFA-9A98-41455B9DAE22}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0F6674E3-6A09-4F2C-A6B4-CC648244BDFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0F6674E3-6A09-4F2C-A6B4-CC648244BDFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0F6674E3-6A09-4F2C-A6B4-CC648244BDFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0F6674E3-6A09-4F2C-A6B4-CC648244BDFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60784DBB-6CCD-4D4A-B9A7-91B02FB46318}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60784DBB-6CCD-4D4A-B9A7-91B02FB46318}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60784DBB-6CCD-4D4A-B9A7-91B02FB46318}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60784DBB-6CCD-4D4A-B9A7-91B02FB46318}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
