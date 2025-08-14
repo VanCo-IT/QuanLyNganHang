@@ -11,7 +11,7 @@ namespace DAL_QuanLyNganHang
 {
     public class DButil
     {
-        private static string connectString = @"Data Source=ADMIN-PC\SQLEXPRESS;Initial Catalog=QuanLyNganHang;Integrated Security=True;Trust Server Certificate=True";
+        private static string connectString = @"Data Source=ADMIN-PC\SQLEXPRESS;Initial Catalog=CSDL_QuanLyNganHang;Integrated Security=True;Trust Server Certificate=True";
         public static SqlCommand GetCommand(string sql, List<object> args, CommandType cmdType)
         {
             SqlConnection conn = new SqlConnection(connectString);
