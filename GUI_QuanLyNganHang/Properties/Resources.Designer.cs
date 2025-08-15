@@ -59,5 +59,15 @@ namespace GUI_QuanLyNganHang.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_quản_lý_khách_hàng {
+            get {
+                object obj = ResourceManager.GetObject("icon quản lý khách hàng", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

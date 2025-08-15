@@ -29,109 +29,165 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDangNhap));
-            pnDangNhap = new Panel();
-            label1 = new Label();
-            label2 = new Label();
+            panel1 = new Panel();
+            cbHienMK = new CheckBox();
+            btnThoat = new Button();
             txtEmail = new TextBox();
-            txtMatKhau = new TextBox();
-            pictureBox1 = new PictureBox();
+            btnDangNhap = new Button();
+            label1 = new Label();
             pictureBox2 = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            label2 = new Label();
+            pictureBox1 = new PictureBox();
+            txtMatKhau = new TextBox();
+            panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
-            // pnDangNhap
+            // panel1
             // 
-            pnDangNhap.BackgroundImage = (Image)resources.GetObject("pnDangNhap.BackgroundImage");
-            pnDangNhap.BackgroundImageLayout = ImageLayout.Stretch;
-            pnDangNhap.Dock = DockStyle.Left;
-            pnDangNhap.Location = new Point(0, 0);
-            pnDangNhap.Name = "pnDangNhap";
-            pnDangNhap.Size = new Size(300, 561);
-            pnDangNhap.TabIndex = 0;
+            panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
+            panel1.BackgroundImageLayout = ImageLayout.Stretch;
+            panel1.Controls.Add(cbHienMK);
+            panel1.Controls.Add(btnThoat);
+            panel1.Controls.Add(txtEmail);
+            panel1.Controls.Add(btnDangNhap);
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(pictureBox2);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(txtMatKhau);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(884, 561);
+            panel1.TabIndex = 0;
             // 
-            // label1
+            // cbHienMK
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(431, 123);
-            label1.Name = "label1";
-            label1.Size = new Size(36, 15);
-            label1.TabIndex = 1;
-            label1.Text = "Email";
+            cbHienMK.AutoSize = true;
+            cbHienMK.Location = new Point(661, 349);
+            cbHienMK.Name = "cbHienMK";
+            cbHienMK.Size = new Size(104, 19);
+            cbHienMK.TabIndex = 26;
+            cbHienMK.Text = "Hiện mật khẩu\r\n";
+            cbHienMK.UseVisualStyleBackColor = true;
+            cbHienMK.CheckedChanged += cbHienMK_CheckedChanged;
             // 
-            // label2
+            // btnThoat
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(431, 243);
-            label2.Name = "label2";
-            label2.Size = new Size(57, 15);
-            label2.TabIndex = 2;
-            label2.Text = "Mật khẩu";
+            btnThoat.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnThoat.BackColor = Color.FromArgb(128, 255, 128);
+            btnThoat.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnThoat.Location = new Point(793, 396);
+            btnThoat.Name = "btnThoat";
+            btnThoat.Size = new Size(79, 51);
+            btnThoat.TabIndex = 25;
+            btnThoat.Text = "Thoát";
+            btnThoat.UseVisualStyleBackColor = false;
+            btnThoat.Click += btnThoat_Click;
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(431, 141);
+            txtEmail.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            txtEmail.Location = new Point(654, 204);
             txtEmail.Multiline = true;
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(360, 39);
-            txtEmail.TabIndex = 3;
+            txtEmail.Size = new Size(227, 24);
+            txtEmail.TabIndex = 20;
             // 
-            // txtMatKhau
+            // btnDangNhap
             // 
-            txtMatKhau.Location = new Point(431, 261);
-            txtMatKhau.Multiline = true;
-            txtMatKhau.Name = "txtMatKhau";
-            txtMatKhau.Size = new Size(360, 42);
-            txtMatKhau.TabIndex = 4;
+            btnDangNhap.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnDangNhap.BackColor = Color.FromArgb(128, 255, 128);
+            btnDangNhap.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnDangNhap.Location = new Point(654, 396);
+            btnDangNhap.Name = "btnDangNhap";
+            btnDangNhap.Size = new Size(80, 51);
+            btnDangNhap.TabIndex = 24;
+            btnDangNhap.Text = "Đăng nhập";
+            btnDangNhap.UseVisualStyleBackColor = false;
+            btnDangNhap.Click += btnDangNhap_Click;
             // 
-            // pictureBox1
+            // label1
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(351, 141);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(64, 39);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 5;
-            pictureBox1.TabStop = false;
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label1.AutoSize = true;
+            label1.Location = new Point(728, 179);
+            label1.Name = "label1";
+            label1.Size = new Size(36, 15);
+            label1.TabIndex = 18;
+            label1.Text = "Email";
             // 
             // pictureBox2
             // 
+            pictureBox2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(351, 253);
+            pictureBox2.Location = new Point(654, 267);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(64, 50);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 6;
+            pictureBox2.Size = new Size(48, 30);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 23;
             pictureBox2.TabStop = false;
+            // 
+            // label2
+            // 
+            label2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label2.AutoSize = true;
+            label2.Location = new Point(708, 282);
+            label2.Name = "label2";
+            label2.Size = new Size(57, 15);
+            label2.TabIndex = 19;
+            label2.Text = "Mật khẩu";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(654, 179);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(57, 19);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 22;
+            pictureBox1.TabStop = false;
+            // 
+            // txtMatKhau
+            // 
+            txtMatKhau.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            txtMatKhau.Location = new Point(654, 303);
+            txtMatKhau.Multiline = true;
+            txtMatKhau.Name = "txtMatKhau";
+            txtMatKhau.Size = new Size(227, 29);
+            txtMatKhau.TabIndex = 21;
+            txtMatKhau.UseSystemPasswordChar = true;
             // 
             // frmDangNhap
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(884, 561);
-            Controls.Add(pictureBox2);
-            Controls.Add(pictureBox1);
-            Controls.Add(txtMatKhau);
-            Controls.Add(txtEmail);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(pnDangNhap);
+            Controls.Add(panel1);
             Name = "frmDangNhap";
             Text = "frmDangNhap";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            FormClosing += frmDangNhap_FormClosing;
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
-        private Panel pnDangNhap;
-        private Label label1;
-        private Label label2;
+        private Panel panel1;
+        private Button btnThoat;
         private TextBox txtEmail;
-        private TextBox txtMatKhau;
-        private PictureBox pictureBox1;
+        private Button btnDangNhap;
+        private Label label1;
         private PictureBox pictureBox2;
+        private Label label2;
+        private PictureBox pictureBox1;
+        private TextBox txtMatKhau;
+        private CheckBox cbHienMK;
     }
 }
