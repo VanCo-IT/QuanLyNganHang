@@ -9,6 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FontAwesome.Sharp" Version="6.6.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\BLL_QuanLyNganHang\BLL_QuanLyNganHang.csproj" />
     <ProjectReference Include="..\DTO_QuanLyNganHang\DTO_QuanLyNganHang.csproj" />
     <ProjectReference Include="..\UTIL_QuanLyNganHang\UTIL_QuanLyNganHang.csproj" />

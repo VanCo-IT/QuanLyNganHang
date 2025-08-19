@@ -74,3 +74,5 @@ D:\VanCo\A_QuanLyNganHang\QuanLyNganHang\GUI_QuanLyNganHang\bin\Debug\net8.0-win
 D:\VanCo\A_QuanLyNganHang\QuanLyNganHang\GUI_QuanLyNganHang\bin\Debug\net8.0-windows\DAL_QuanLyNganHang.pdb
 D:\VanCo\A_QuanLyNganHang\QuanLyNganHang\GUI_QuanLyNganHang\obj\Debug\net8.0-windows\GUI_QuanLyNganHang.csproj.AssemblyReference.cache
 D:\VanCo\A_QuanLyNganHang\QuanLyNganHang\GUI_QuanLyNganHang\obj\Debug\net8.0-windows\GUI_Quan.04A91228.Up2Date
+D:\VanCo\A_QuanLyNganHang\QuanLyNganHang\GUI_QuanLyNganHang\bin\Debug\net8.0-windows\FontAwesome.Sharp.dll
+D:\VanCo\A_QuanLyNganHang\QuanLyNganHang\GUI_QuanLyNganHang\obj\Debug\net8.0-windows\GUI_QuanLyNganHang.frmDuPhong.resources
