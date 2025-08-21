@@ -39,6 +39,11 @@
             pictureBox1 = new PictureBox();
             pictureBox3 = new PictureBox();
             pictureBox4 = new PictureBox();
+            btnHienMKMoi = new Button();
+            btnDoiMatKhau = new Button();
+            btnThoat = new Button();
+            btnHienXacNhanMK = new Button();
+            btnHienMKCu = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
@@ -96,7 +101,8 @@
             txtMatKhauCu.Font = new Font("Segoe UI", 12F);
             txtMatKhauCu.Location = new Point(459, 132);
             txtMatKhauCu.Name = "txtMatKhauCu";
-            txtMatKhauCu.Size = new Size(428, 29);
+            txtMatKhauCu.PasswordChar = '*';
+            txtMatKhauCu.Size = new Size(332, 29);
             txtMatKhauCu.TabIndex = 4;
             // 
             // txtMatKhauMoi
@@ -105,7 +111,8 @@
             txtMatKhauMoi.Font = new Font("Segoe UI", 12F);
             txtMatKhauMoi.Location = new Point(459, 285);
             txtMatKhauMoi.Name = "txtMatKhauMoi";
-            txtMatKhauMoi.Size = new Size(428, 29);
+            txtMatKhauMoi.PasswordChar = '#';
+            txtMatKhauMoi.Size = new Size(332, 29);
             txtMatKhauMoi.TabIndex = 5;
             // 
             // txtXacNhanMatkhau
@@ -114,14 +121,15 @@
             txtXacNhanMatkhau.Font = new Font("Segoe UI", 12F);
             txtXacNhanMatkhau.Location = new Point(459, 418);
             txtXacNhanMatkhau.Name = "txtXacNhanMatkhau";
-            txtXacNhanMatkhau.Size = new Size(428, 29);
+            txtXacNhanMatkhau.PasswordChar = '#';
+            txtXacNhanMatkhau.Size = new Size(332, 29);
             txtXacNhanMatkhau.TabIndex = 6;
             // 
             // pictureBox1
             // 
             pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(665, 97);
+            pictureBox1.Location = new Point(676, 97);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(40, 32);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -132,7 +140,7 @@
             // 
             pictureBox3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(732, 381);
+            pictureBox3.Location = new Point(732, 383);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(40, 34);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
@@ -143,12 +151,70 @@
             // 
             pictureBox4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(686, 250);
+            pictureBox4.Location = new Point(692, 250);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(40, 34);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox4.TabIndex = 10;
             pictureBox4.TabStop = false;
+            // 
+            // btnHienMKMoi
+            // 
+            btnHienMKMoi.BackgroundImage = (Image)resources.GetObject("btnHienMKMoi.BackgroundImage");
+            btnHienMKMoi.BackgroundImageLayout = ImageLayout.Zoom;
+            btnHienMKMoi.Location = new Point(824, 285);
+            btnHienMKMoi.Name = "btnHienMKMoi";
+            btnHienMKMoi.Size = new Size(61, 29);
+            btnHienMKMoi.TabIndex = 11;
+            btnHienMKMoi.UseVisualStyleBackColor = true;
+            btnHienMKMoi.Click += btnHienMKMoi_Click;
+            // 
+            // btnDoiMatKhau
+            // 
+            btnDoiMatKhau.Font = new Font("Segoe UI", 15F);
+            btnDoiMatKhau.ForeColor = Color.Red;
+            btnDoiMatKhau.Location = new Point(459, 486);
+            btnDoiMatKhau.Name = "btnDoiMatKhau";
+            btnDoiMatKhau.Size = new Size(160, 37);
+            btnDoiMatKhau.TabIndex = 12;
+            btnDoiMatKhau.Text = "Đổi mật khẩu";
+            btnDoiMatKhau.UseVisualStyleBackColor = true;
+            btnDoiMatKhau.Click += btnDoiMatKhau_Click;
+            // 
+            // btnThoat
+            // 
+            btnThoat.Font = new Font("Segoe UI", 15F);
+            btnThoat.ForeColor = Color.Red;
+            btnThoat.Location = new Point(676, 486);
+            btnThoat.Name = "btnThoat";
+            btnThoat.Size = new Size(115, 37);
+            btnThoat.TabIndex = 13;
+            btnThoat.Text = "Thoát";
+            btnThoat.UseVisualStyleBackColor = true;
+            btnThoat.Click += btnThoat_Click;
+            // 
+            // btnHienXacNhanMK
+            // 
+            btnHienXacNhanMK.BackgroundImage = (Image)resources.GetObject("btnHienXacNhanMK.BackgroundImage");
+            btnHienXacNhanMK.BackgroundImageLayout = ImageLayout.Zoom;
+            btnHienXacNhanMK.Location = new Point(824, 418);
+            btnHienXacNhanMK.Name = "btnHienXacNhanMK";
+            btnHienXacNhanMK.Size = new Size(62, 29);
+            btnHienXacNhanMK.TabIndex = 14;
+            btnHienXacNhanMK.UseVisualStyleBackColor = true;
+            btnHienXacNhanMK.Click += btnHienXacNhanMK_Click;
+            // 
+            // btnHienMKCu
+            // 
+            btnHienMKCu.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnHienMKCu.BackgroundImage = (Image)resources.GetObject("btnHienMKCu.BackgroundImage");
+            btnHienMKCu.BackgroundImageLayout = ImageLayout.Zoom;
+            btnHienMKCu.Location = new Point(824, 132);
+            btnHienMKCu.Name = "btnHienMKCu";
+            btnHienMKCu.Size = new Size(62, 29);
+            btnHienMKCu.TabIndex = 15;
+            btnHienMKCu.UseVisualStyleBackColor = true;
+            btnHienMKCu.Click += btnHienMKCu_Click;
             // 
             // frmDoiMatKhau
             // 
@@ -157,6 +223,11 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(884, 561);
+            Controls.Add(btnHienMKCu);
+            Controls.Add(btnHienXacNhanMK);
+            Controls.Add(btnThoat);
+            Controls.Add(btnDoiMatKhau);
+            Controls.Add(btnHienMKMoi);
             Controls.Add(pictureBox4);
             Controls.Add(pictureBox3);
             Controls.Add(pictureBox1);
@@ -169,6 +240,7 @@
             Controls.Add(label1);
             Name = "frmDoiMatKhau";
             Text = "Đổi mật khẩu";
+            Load += frmDoiMatKhau_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
@@ -188,5 +260,10 @@
         private PictureBox pictureBox1;
         private PictureBox pictureBox3;
         private PictureBox pictureBox4;
+        private Button btnHienMKMoi;
+        private Button btnDoiMatKhau;
+        private Button btnThoat;
+        private Button btnHienXacNhanMK;
+        private Button btnHienMKCu;
     }
 }

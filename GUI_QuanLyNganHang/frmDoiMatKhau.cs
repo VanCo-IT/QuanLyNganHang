@@ -7,14 +7,72 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BLL_QuanLyNganHang;
+using UTIL_QuanLyNganHang;  
 
 namespace GUI_QuanLyNganHang
 {
     public partial class frmDoiMatKhau : Form
     {
+        BUSNhanVien busNhanVien = new BUSNhanVien();
         public frmDoiMatKhau()
         {
             InitializeComponent();
+        }
+
+        private void frmDoiMatKhau_Load(object sender, EventArgs e)
+        {
+            //if (AuthUtil.IsLogin())
+            //{
+            //    txtCPMaNV.Text = AuthUtil.user.MaNhanVien;
+            //    txtCPTenNv.Text = AuthUtil.user.HoTen;
+            //}
+            //dùng khi thêm mã nnv và tên nv
+        }
+
+        private void btnHienMKCu_Click(object sender, EventArgs e)
+        {
+            txtMatKhauCu.PasswordChar = (txtMatKhauCu.PasswordChar == '*') ? '\0' : '*';
+        }
+
+        private void btnHienMKMoi_Click(object sender, EventArgs e)
+        {
+            txtMatKhauMoi.PasswordChar = (txtMatKhauMoi.PasswordChar == '#') ? '\0' : '#';
+        }
+
+        private void btnHienXacNhanMK_Click(object sender, EventArgs e)
+        {
+            txtXacNhanMatkhau.PasswordChar = (txtXacNhanMatkhau.PasswordChar == '#') ? '\0' : '#';
+        }
+
+        private void btnDoiMatKhau_Click(object sender, EventArgs e)
+        {
+            if (!AuthUtil.user.MatKhau.Equals(txtMatKhauCu.Text))
+            {
+                MessageBox.Show(this, "Mật khẩu cũ chưa đúng!!!");
+            }
+            else
+            {
+                if (!txtMatKhauMoi.Text.Equals(txtXacNhanMatkhau.Text))
+                {
+                    MessageBox.Show(this, "Xác nhận mật khẩu mới chưa trùng khớp!!!");
+                }
+                else
+                {
+                    AuthUtil.user.MatKhau = txtMatKhauMoi.Text;
+
+                    if (busNhanVien.ResetMatKhau(AuthUtil.user.Email, txtMatKhauMoi.Text))
+                    {
+                        MessageBox.Show("Cập nhật mật khẩu thành công!!!");
+                    }
+                    else MessageBox.Show("Đổi mật khẩu thất bại, vui lòng kiểm tra lại!!!");
+                }
+            }
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
