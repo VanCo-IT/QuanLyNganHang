@@ -69,5 +69,10 @@ namespace GUI_QuanLyNganHang
                 Application.Exit();
             }
         }
+
+        private void btnHienMK_Click(object sender, EventArgs e)
+        {
+            txtMatKhau.PasswordChar = (txtMatKhau.PasswordChar == '*') ? '\0' : '*';
+        }
     }
 }

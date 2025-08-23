@@ -28,7 +28,8 @@ namespace DAL_QuanLyNganHang
         {
             SqlCommand cmd = GetCommand(sql, args, cmdType);
             cmd.Connection.Open();
-            cmd.Transaction = cmd.Connection.BeginTransaction();
+            SqlTransaction transaction = cmd.Connection.BeginTransaction();
+            cmd.Transaction = transaction;
             try
             {
                 cmd.ExecuteNonQuery();
@@ -36,7 +37,10 @@ namespace DAL_QuanLyNganHang
             }
             catch (Exception)
             {
-                cmd.Transaction.Rollback();
+                if (cmd.Transaction != null)
+                {
+                    cmd.Transaction.Rollback();
+                }
                 throw;
             }
         }

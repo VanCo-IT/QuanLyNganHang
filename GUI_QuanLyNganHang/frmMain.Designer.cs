@@ -276,6 +276,7 @@
             mnuHeThong_DangXuat.Name = "mnuHeThong_DangXuat";
             mnuHeThong_DangXuat.Size = new Size(214, 26);
             mnuHeThong_DangXuat.Text = "Đăng xuất";
+            mnuHeThong_DangXuat.Click += mnuHeThong_DangXuat_Click;
             // 
             // mnuHeThong_Thoat
             // 
@@ -283,6 +284,7 @@
             mnuHeThong_Thoat.Name = "mnuHeThong_Thoat";
             mnuHeThong_Thoat.Size = new Size(214, 26);
             mnuHeThong_Thoat.Text = "Thoát";
+            mnuHeThong_Thoat.Click += mnuHeThong_Thoat_Click;
             // 
             // mnuKhachHang
             // 
@@ -345,6 +347,7 @@
             mnuNhanVien.Name = "mnuNhanVien";
             mnuNhanVien.Size = new Size(113, 23);
             mnuNhanVien.Text = "Nhân viên";
+            mnuNhanVien.Click += mnuNhanVien_Click;
             // 
             // mnuTroGiup
             // 

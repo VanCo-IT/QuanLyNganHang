@@ -157,9 +157,9 @@
             txtMatKhau.Location = new Point(654, 303);
             txtMatKhau.Multiline = true;
             txtMatKhau.Name = "txtMatKhau";
+            txtMatKhau.PasswordChar = '*';
             txtMatKhau.Size = new Size(227, 29);
             txtMatKhau.TabIndex = 21;
-            txtMatKhau.UseSystemPasswordChar = true;
             // 
             // frmDangNhap
             // 

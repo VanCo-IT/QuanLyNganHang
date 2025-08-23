@@ -88,5 +88,29 @@ namespace GUI_QuanLyNganHang
             //reset.ShowDialog();
             openChildForm(new frmDoiMatKhau());
         }
+
+        private void mnuHeThong_DangXuat_Click(object sender, EventArgs e)
+        {
+            mnuKhachHang.Visible = false;
+            mnuGiaoDich.Visible = false;
+            mnuKhoanvay.Visible = false;
+            mnuNhanVien.Visible = false;
+            mnuTroGiup.Visible = false;
+
+            this.Hide();
+            AuthUtil.user = null;
+            frmDangNhap login = new frmDangNhap();
+            login.Show();
+        }
+
+        private void mnuHeThong_Thoat_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void mnuNhanVien_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmNhanVien());
+        }
     }
 }
