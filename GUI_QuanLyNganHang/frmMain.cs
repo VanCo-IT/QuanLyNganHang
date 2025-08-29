@@ -112,5 +112,15 @@ namespace GUI_QuanLyNganHang
         {
             openChildForm(new frmNhanVien());
         }
+
+        private void mnuKhachHang_QLKhachHang_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmKhachHang());
+        }
+
+        private void mnuKhachHang_QLTaiKhoanNganHang_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmTaiKhoan());
+        }
     }
 }

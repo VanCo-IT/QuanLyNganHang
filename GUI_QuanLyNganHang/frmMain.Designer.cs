@@ -301,6 +301,7 @@
             mnuKhachHang_QLKhachHang.Name = "mnuKhachHang_QLKhachHang";
             mnuKhachHang_QLKhachHang.Size = new Size(248, 24);
             mnuKhachHang_QLKhachHang.Text = "Quản lý khách hàng";
+            mnuKhachHang_QLKhachHang.Click += mnuKhachHang_QLKhachHang_Click;
             // 
             // mnuKhachHang_QLTaiKhoanNganHang
             // 
@@ -308,6 +309,7 @@
             mnuKhachHang_QLTaiKhoanNganHang.Name = "mnuKhachHang_QLTaiKhoanNganHang";
             mnuKhachHang_QLTaiKhoanNganHang.Size = new Size(248, 24);
             mnuKhachHang_QLTaiKhoanNganHang.Text = "Quản lý tài khoản ngân hàng";
+            mnuKhachHang_QLTaiKhoanNganHang.Click += mnuKhachHang_QLTaiKhoanNganHang_Click;
             // 
             // mnuGiaoDich
             // 

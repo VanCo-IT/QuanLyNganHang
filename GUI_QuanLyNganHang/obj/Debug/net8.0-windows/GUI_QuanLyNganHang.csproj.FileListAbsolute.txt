@@ -77,3 +77,5 @@ D:\VanCo\A_QuanLyNganHang\QuanLyNganHang\GUI_QuanLyNganHang\obj\Debug\net8.0-win
 D:\VanCo\A_QuanLyNganHang\QuanLyNganHang\GUI_QuanLyNganHang\bin\Debug\net8.0-windows\FontAwesome.Sharp.dll
 D:\VanCo\A_QuanLyNganHang\QuanLyNganHang\GUI_QuanLyNganHang\obj\Debug\net8.0-windows\GUI_QuanLyNganHang.frmDoiMatKhau.resources
 D:\VanCo\A_QuanLyNganHang\QuanLyNganHang\GUI_QuanLyNganHang\obj\Debug\net8.0-windows\GUI_QuanLyNganHang.frmNhanVien.resources
+D:\VanCo\A_QuanLyNganHang\QuanLyNganHang\GUI_QuanLyNganHang\obj\Debug\net8.0-windows\GUI_QuanLyNganHang.frmKhachHang.resources
+D:\VanCo\A_QuanLyNganHang\QuanLyNganHang\GUI_QuanLyNganHang\obj\Debug\net8.0-windows\GUI_QuanLyNganHang.frmTaiKhoan.resources

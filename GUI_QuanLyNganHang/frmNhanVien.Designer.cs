@@ -50,21 +50,23 @@
             label2 = new Label();
             label1 = new Label();
             pictureAnhNV = new PictureBox();
-            panel1 = new Panel();
-            dgvNhanVien = new DataGridView();
             txtTimNV = new TextBox();
-            panel2 = new Panel();
+            btnTimNV = new Button();
+            pnTimKiemNV = new Panel();
             btnLamMoiNV = new Button();
             btnXoaNV = new Button();
-            btnTimNV = new Button();
-            btnCapNhatNV = new Button();
             btnThemNV = new Button();
+            btnCapNhatNV = new Button();
+            pnChucNang = new Panel();
+            panel1 = new Panel();
+            dgvNhanVien = new DataGridView();
             pnThongTinNV.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureAnhNV).BeginInit();
+            pnTimKiemNV.SuspendLayout();
+            pnChucNang.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvNhanVien).BeginInit();
-            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // pnThongTinNV
@@ -272,111 +274,115 @@
             pictureAnhNV.TabIndex = 0;
             pictureAnhNV.TabStop = false;
             // 
-            // panel1
-            // 
-            panel1.Controls.Add(dgvNhanVien);
-            panel1.Controls.Add(txtTimNV);
-            panel1.Controls.Add(panel2);
-            panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(0, 150);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(884, 411);
-            panel1.TabIndex = 1;
-            // 
-            // dgvNhanVien
-            // 
-            dgvNhanVien.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvNhanVien.Dock = DockStyle.Fill;
-            dgvNhanVien.Location = new Point(0, 23);
-            dgvNhanVien.Name = "dgvNhanVien";
-            dgvNhanVien.Size = new Size(691, 388);
-            dgvNhanVien.TabIndex = 3;
-            dgvNhanVien.CellDoubleClick += dgvNhanVien_CellDoubleClick;
-            // 
             // txtTimNV
             // 
-            txtTimNV.Dock = DockStyle.Top;
+            txtTimNV.Dock = DockStyle.Fill;
             txtTimNV.Location = new Point(0, 0);
             txtTimNV.Name = "txtTimNV";
-            txtTimNV.Size = new Size(691, 23);
+            txtTimNV.Size = new Size(648, 23);
             txtTimNV.TabIndex = 2;
             // 
-            // panel2
+            // btnTimNV
             // 
-            panel2.BackColor = Color.FromArgb(255, 192, 192);
-            panel2.Controls.Add(btnLamMoiNV);
-            panel2.Controls.Add(btnXoaNV);
-            panel2.Controls.Add(btnTimNV);
-            panel2.Controls.Add(btnCapNhatNV);
-            panel2.Controls.Add(btnThemNV);
-            panel2.Dock = DockStyle.Right;
-            panel2.Location = new Point(691, 0);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(193, 411);
-            panel2.TabIndex = 0;
+            btnTimNV.BackgroundImage = (Image)resources.GetObject("btnTimNV.BackgroundImage");
+            btnTimNV.BackgroundImageLayout = ImageLayout.Zoom;
+            btnTimNV.Dock = DockStyle.Right;
+            btnTimNV.Location = new Point(648, 0);
+            btnTimNV.Name = "btnTimNV";
+            btnTimNV.Size = new Size(36, 28);
+            btnTimNV.TabIndex = 1;
+            btnTimNV.UseVisualStyleBackColor = true;
+            btnTimNV.Click += btnTimNV_Click;
+            // 
+            // pnTimKiemNV
+            // 
+            pnTimKiemNV.Controls.Add(txtTimNV);
+            pnTimKiemNV.Controls.Add(btnTimNV);
+            pnTimKiemNV.Dock = DockStyle.Top;
+            pnTimKiemNV.Location = new Point(0, 0);
+            pnTimKiemNV.Name = "pnTimKiemNV";
+            pnTimKiemNV.Size = new Size(684, 28);
+            pnTimKiemNV.TabIndex = 5;
             // 
             // btnLamMoiNV
             // 
             btnLamMoiNV.ForeColor = Color.LightSeaGreen;
             btnLamMoiNV.Image = (Image)resources.GetObject("btnLamMoiNV.Image");
-            btnLamMoiNV.Location = new Point(121, 303);
+            btnLamMoiNV.Location = new Point(98, 95);
             btnLamMoiNV.Name = "btnLamMoiNV";
             btnLamMoiNV.Size = new Size(72, 77);
             btnLamMoiNV.TabIndex = 8;
             btnLamMoiNV.Text = "Làm mới";
             btnLamMoiNV.TextImageRelation = TextImageRelation.ImageAboveText;
             btnLamMoiNV.UseVisualStyleBackColor = true;
-            btnLamMoiNV.Click += btnLamMoiNV_Click;
             // 
             // btnXoaNV
             // 
             btnXoaNV.ForeColor = Color.LightSeaGreen;
             btnXoaNV.Image = (Image)resources.GetObject("btnXoaNV.Image");
-            btnXoaNV.Location = new Point(121, 214);
+            btnXoaNV.Location = new Point(16, 41);
             btnXoaNV.Name = "btnXoaNV";
             btnXoaNV.Size = new Size(63, 69);
             btnXoaNV.TabIndex = 7;
             btnXoaNV.Text = "Xóa";
             btnXoaNV.TextImageRelation = TextImageRelation.ImageAboveText;
             btnXoaNV.UseVisualStyleBackColor = true;
-            btnXoaNV.Click += btnXoaNV_Click;
-            // 
-            // btnTimNV
-            // 
-            btnTimNV.BackgroundImage = (Image)resources.GetObject("btnTimNV.BackgroundImage");
-            btnTimNV.BackgroundImageLayout = ImageLayout.Zoom;
-            btnTimNV.Location = new Point(0, 0);
-            btnTimNV.Name = "btnTimNV";
-            btnTimNV.Size = new Size(47, 45);
-            btnTimNV.TabIndex = 1;
-            btnTimNV.UseVisualStyleBackColor = true;
-            btnTimNV.Click += btnTimNV_Click;
-            // 
-            // btnCapNhatNV
-            // 
-            btnCapNhatNV.ForeColor = Color.LightSeaGreen;
-            btnCapNhatNV.Image = (Image)resources.GetObject("btnCapNhatNV.Image");
-            btnCapNhatNV.Location = new Point(3, 313);
-            btnCapNhatNV.Name = "btnCapNhatNV";
-            btnCapNhatNV.Size = new Size(74, 67);
-            btnCapNhatNV.TabIndex = 6;
-            btnCapNhatNV.Text = "Cập nhật";
-            btnCapNhatNV.TextImageRelation = TextImageRelation.ImageAboveText;
-            btnCapNhatNV.UseVisualStyleBackColor = true;
-            btnCapNhatNV.Click += btnCapNhatNV_Click;
             // 
             // btnThemNV
             // 
             btnThemNV.ForeColor = Color.LightSeaGreen;
             btnThemNV.Image = (Image)resources.GetObject("btnThemNV.Image");
-            btnThemNV.Location = new Point(3, 214);
+            btnThemNV.Location = new Point(53, 205);
             btnThemNV.Name = "btnThemNV";
             btnThemNV.Size = new Size(77, 69);
             btnThemNV.TabIndex = 0;
             btnThemNV.Text = "Thêm";
             btnThemNV.TextImageRelation = TextImageRelation.ImageAboveText;
             btnThemNV.UseVisualStyleBackColor = true;
-            btnThemNV.Click += btnThemNV_Click;
+            // 
+            // btnCapNhatNV
+            // 
+            btnCapNhatNV.ForeColor = Color.LightSeaGreen;
+            btnCapNhatNV.Image = (Image)resources.GetObject("btnCapNhatNV.Image");
+            btnCapNhatNV.Location = new Point(27, 132);
+            btnCapNhatNV.Name = "btnCapNhatNV";
+            btnCapNhatNV.Size = new Size(74, 67);
+            btnCapNhatNV.TabIndex = 6;
+            btnCapNhatNV.Text = "Cập nhật";
+            btnCapNhatNV.TextImageRelation = TextImageRelation.ImageAboveText;
+            btnCapNhatNV.UseVisualStyleBackColor = true;
+            // 
+            // pnChucNang
+            // 
+            pnChucNang.BackColor = Color.FromArgb(255, 192, 255);
+            pnChucNang.Controls.Add(btnXoaNV);
+            pnChucNang.Controls.Add(btnThemNV);
+            pnChucNang.Controls.Add(btnLamMoiNV);
+            pnChucNang.Controls.Add(btnCapNhatNV);
+            pnChucNang.Dock = DockStyle.Right;
+            pnChucNang.Location = new Point(684, 150);
+            pnChucNang.Name = "pnChucNang";
+            pnChucNang.Size = new Size(200, 411);
+            pnChucNang.TabIndex = 2;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(dgvNhanVien);
+            panel1.Controls.Add(pnTimKiemNV);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(0, 150);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(684, 411);
+            panel1.TabIndex = 3;
+            // 
+            // dgvNhanVien
+            // 
+            dgvNhanVien.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvNhanVien.Dock = DockStyle.Fill;
+            dgvNhanVien.Location = new Point(0, 28);
+            dgvNhanVien.Name = "dgvNhanVien";
+            dgvNhanVien.Size = new Size(684, 383);
+            dgvNhanVien.TabIndex = 6;
             // 
             // frmNhanVien
             // 
@@ -384,6 +390,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(884, 561);
             Controls.Add(panel1);
+            Controls.Add(pnChucNang);
             Controls.Add(pnThongTinNV);
             Name = "frmNhanVien";
             Text = "Nhân viên";
@@ -393,10 +400,11 @@
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureAnhNV).EndInit();
+            pnTimKiemNV.ResumeLayout(false);
+            pnTimKiemNV.PerformLayout();
+            pnChucNang.ResumeLayout(false);
             panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvNhanVien).EndInit();
-            panel2.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -421,25 +429,26 @@
         private TextBox txtMaNV;
         private TextBox txtTenDangNhap;
         private TextBox txtTrangThai;
-        private Panel panel1;
-        private Panel panel2;
         private Button btnTimNV;
-        private Button btnThemNV;
         private Button btnLamMoi;
         private TextBox txtEmail;
         private TextBox txtMatKhau;
         private TextBox txtTenNV;
         private Button button1;
-        private Button btnCapNhatNV;
-        private Button btnLamMoiNV;
-        private Button btnXoaNV;
         private TextBox txtTimNV;
-        private DataGridView dgvNhanVien;
         private RadioButton radioButton2;
         private RadioButton rbNhanVien;
         private Panel panel3;
         private RadioButton rbTamNgung;
         private RadioButton rbHoatDong;
         private RadioButton rbQuanLy;
+        private Panel pnTimKiemNV;
+        private Button btnLamMoiNV;
+        private Button btnXoaNV;
+        private Button btnThemNV;
+        private Button btnCapNhatNV;
+        private Panel pnChucNang;
+        private Panel panel1;
+        private DataGridView dgvNhanVien;
     }
 }
