@@ -308,9 +308,9 @@
             // 
             btnLamMoiNV.ForeColor = Color.LightSeaGreen;
             btnLamMoiNV.Image = (Image)resources.GetObject("btnLamMoiNV.Image");
-            btnLamMoiNV.Location = new Point(98, 95);
+            btnLamMoiNV.Location = new Point(112, 243);
             btnLamMoiNV.Name = "btnLamMoiNV";
-            btnLamMoiNV.Size = new Size(72, 77);
+            btnLamMoiNV.Size = new Size(85, 78);
             btnLamMoiNV.TabIndex = 8;
             btnLamMoiNV.Text = "Làm mới";
             btnLamMoiNV.TextImageRelation = TextImageRelation.ImageAboveText;
@@ -320,9 +320,9 @@
             // 
             btnXoaNV.ForeColor = Color.LightSeaGreen;
             btnXoaNV.Image = (Image)resources.GetObject("btnXoaNV.Image");
-            btnXoaNV.Location = new Point(16, 41);
+            btnXoaNV.Location = new Point(3, 243);
             btnXoaNV.Name = "btnXoaNV";
-            btnXoaNV.Size = new Size(63, 69);
+            btnXoaNV.Size = new Size(84, 78);
             btnXoaNV.TabIndex = 7;
             btnXoaNV.Text = "Xóa";
             btnXoaNV.TextImageRelation = TextImageRelation.ImageAboveText;
@@ -332,9 +332,9 @@
             // 
             btnThemNV.ForeColor = Color.LightSeaGreen;
             btnThemNV.Image = (Image)resources.GetObject("btnThemNV.Image");
-            btnThemNV.Location = new Point(53, 205);
+            btnThemNV.Location = new Point(3, 47);
             btnThemNV.Name = "btnThemNV";
-            btnThemNV.Size = new Size(77, 69);
+            btnThemNV.Size = new Size(87, 91);
             btnThemNV.TabIndex = 0;
             btnThemNV.Text = "Thêm";
             btnThemNV.TextImageRelation = TextImageRelation.ImageAboveText;
@@ -344,9 +344,9 @@
             // 
             btnCapNhatNV.ForeColor = Color.LightSeaGreen;
             btnCapNhatNV.Image = (Image)resources.GetObject("btnCapNhatNV.Image");
-            btnCapNhatNV.Location = new Point(27, 132);
+            btnCapNhatNV.Location = new Point(96, 47);
             btnCapNhatNV.Name = "btnCapNhatNV";
-            btnCapNhatNV.Size = new Size(74, 67);
+            btnCapNhatNV.Size = new Size(92, 91);
             btnCapNhatNV.TabIndex = 6;
             btnCapNhatNV.Text = "Cập nhật";
             btnCapNhatNV.TextImageRelation = TextImageRelation.ImageAboveText;
