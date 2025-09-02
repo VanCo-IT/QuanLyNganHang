@@ -48,8 +48,29 @@ namespace GUI_QuanLyNganHang
             rbHoatDong.Checked = false;
             rbTamNgung.Checked = false;
         }
+        private void btnTimNV_Click(object sender, EventArgs e)
+        {
+            string maNV = txtTimNV.Text.Trim();
 
-        private void dgvNhanVien_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+            if (string.IsNullOrEmpty(maNV))
+            {
+                MessageBox.Show("Vui lòng nhập mã nhân viên cần tìm!");
+                return;
+            }
+
+            var list = bUSnhanvien.GetNhanVienList();
+
+            var ketQua = list.Where(nv => nv.MaNV != null && nv.MaNV.Trim().Equals(maNV, StringComparison.OrdinalIgnoreCase)).ToList();
+
+            if (ketQua.Count == 0)
+            {
+                MessageBox.Show("Không tìm thấy nhân viên có mã: " + maNV);
+            }
+
+            dgvNhanVien.DataSource = ketQua;
+        }
+
+        private void dgvNhanVien_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = dgvNhanVien.Rows[e.RowIndex];
             // Đổ dữ liệu vào các ô nhập liệu trên form
@@ -88,7 +109,7 @@ namespace GUI_QuanLyNganHang
             txtMaNV.Enabled = false;
         }
 
-        private void btnThemNV_Click(object sender, EventArgs e)
+        private void btnThemNV_Click_1(object sender, EventArgs e)
         {
             string maNV = txtMaNV.Text.Trim();
             string tenNV = txtTenNV.Text.Trim();
@@ -148,7 +169,7 @@ namespace GUI_QuanLyNganHang
 
         }
 
-        private void btnCapNhatNV_Click(object sender, EventArgs e)
+        private void btnCapNhatNV_Click_1(object sender, EventArgs e)
         {
             string maNV = txtMaNV.Text.Trim();
             string tenNV = txtTenNV.Text.Trim();
@@ -207,7 +228,7 @@ namespace GUI_QuanLyNganHang
             }
         }
 
-        private void btnXoaNV_Click(object sender, EventArgs e)
+        private void btnXoaNV_Click_1(object sender, EventArgs e)
         {
             string maNV = txtMaNV.Text.Trim();
             string tenNV = txtTenNV.Text.Trim();
@@ -255,32 +276,10 @@ namespace GUI_QuanLyNganHang
             }
         }
 
-        private void btnLamMoiNV_Click(object sender, EventArgs e)
+        private void btnLamMoiNV_Click_1(object sender, EventArgs e)
         {
             ClearForm();
             LoadDanhSachNhanVien();
-        }
-
-        private void btnTimNV_Click(object sender, EventArgs e)
-        {
-            string maNV = txtTimNV.Text.Trim();
-
-            if (string.IsNullOrEmpty(maNV))
-            {
-                MessageBox.Show("Vui lòng nhập mã nhân viên cần tìm!");
-                return;
-            }
-
-            var list = bUSnhanvien.GetNhanVienList();
-
-            var ketQua = list.Where(nv => nv.MaNV != null && nv.MaNV.Trim().Equals(maNV, StringComparison.OrdinalIgnoreCase)).ToList();
-
-            if (ketQua.Count == 0)
-            {
-                MessageBox.Show("Không tìm thấy nhân viên có mã: " + maNV);
-            }
-
-            dgvNhanVien.DataSource = ketQua;
         }
     }
 }
