@@ -315,6 +315,7 @@
             btnLamMoiNV.Text = "Làm mới";
             btnLamMoiNV.TextImageRelation = TextImageRelation.ImageAboveText;
             btnLamMoiNV.UseVisualStyleBackColor = true;
+            btnLamMoiNV.Click += btnLamMoiNV_Click_1;
             // 
             // btnXoaNV
             // 
@@ -327,6 +328,7 @@
             btnXoaNV.Text = "Xóa";
             btnXoaNV.TextImageRelation = TextImageRelation.ImageAboveText;
             btnXoaNV.UseVisualStyleBackColor = true;
+            btnXoaNV.Click += btnXoaNV_Click_1;
             // 
             // btnThemNV
             // 
@@ -339,6 +341,7 @@
             btnThemNV.Text = "Thêm";
             btnThemNV.TextImageRelation = TextImageRelation.ImageAboveText;
             btnThemNV.UseVisualStyleBackColor = true;
+            btnThemNV.Click += btnThemNV_Click_1;
             // 
             // btnCapNhatNV
             // 
@@ -351,6 +354,7 @@
             btnCapNhatNV.Text = "Cập nhật";
             btnCapNhatNV.TextImageRelation = TextImageRelation.ImageAboveText;
             btnCapNhatNV.UseVisualStyleBackColor = true;
+            btnCapNhatNV.Click += btnCapNhatNV_Click_1;
             // 
             // pnChucNang
             // 
@@ -383,6 +387,7 @@
             dgvNhanVien.Name = "dgvNhanVien";
             dgvNhanVien.Size = new Size(684, 383);
             dgvNhanVien.TabIndex = 6;
+            dgvNhanVien.CellDoubleClick += dgvNhanVien_CellDoubleClick_1;
             // 
             // frmNhanVien
             // 

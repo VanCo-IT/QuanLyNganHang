@@ -62,6 +62,7 @@
             mnuKhoanvay_ThanhToanKhoanVay = new ToolStripMenuItem();
             mnuNhanVien = new ToolStripMenuItem();
             mnuTroGiup = new ToolStripMenuItem();
+            chiNhánhToolStripMenuItem = new ToolStripMenuItem();
             pnMain = new Panel();
             statusStrip1.SuspendLayout();
             pnLeft.SuspendLayout();
@@ -238,7 +239,7 @@
             // 
             menuscriptMain.BackColor = Color.Cyan;
             menuscriptMain.Dock = DockStyle.Left;
-            menuscriptMain.Items.AddRange(new ToolStripItem[] { mnuHeThong, mnuKhachHang, mnuGiaoDich, mnuKhoanvay, mnuNhanVien, mnuTroGiup });
+            menuscriptMain.Items.AddRange(new ToolStripItem[] { mnuHeThong, mnuKhachHang, mnuGiaoDich, mnuKhoanvay, mnuNhanVien, mnuTroGiup, chiNhánhToolStripMenuItem });
             menuscriptMain.Location = new Point(0, 0);
             menuscriptMain.Name = "menuscriptMain";
             menuscriptMain.Size = new Size(126, 600);
@@ -359,6 +360,13 @@
             mnuTroGiup.Size = new Size(113, 23);
             mnuTroGiup.Text = "Trợ giúp";
             // 
+            // chiNhánhToolStripMenuItem
+            // 
+            chiNhánhToolStripMenuItem.Image = (Image)resources.GetObject("chiNhánhToolStripMenuItem.Image");
+            chiNhánhToolStripMenuItem.Name = "chiNhánhToolStripMenuItem";
+            chiNhánhToolStripMenuItem.Size = new Size(113, 20);
+            chiNhánhToolStripMenuItem.Text = "Chi nhánh?";
+            // 
             // pnMain
             // 
             pnMain.BackColor = Color.White;
@@ -428,5 +436,6 @@
         private ToolStripMenuItem mnuNhanVien;
         private ToolStripMenuItem mnuTroGiup;
         private Panel pnMain;
+        private ToolStripMenuItem chiNhánhToolStripMenuItem;
     }
 }
