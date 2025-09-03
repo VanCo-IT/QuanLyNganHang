@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTO_QuanLyNganHang
 {
-    public class Chi_nhánh
+    public class ChiNhanh
     {
         public string MaCN { get; set; }
         public string TenCN { get; set; }
