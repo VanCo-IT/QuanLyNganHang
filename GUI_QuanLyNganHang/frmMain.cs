@@ -122,5 +122,10 @@ namespace GUI_QuanLyNganHang
         {
             openChildForm(new frmTaiKhoan());
         }
+
+        private void chiNhánhToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmChiNhanh());
+        }
     }
 }
