@@ -163,5 +163,27 @@ namespace GUI_QuanLyNganHang
             ClearForm();
             LoadChiNhanh();
         }
+
+        private void btnTimChiNhanh_Click(object sender, EventArgs e)
+        {
+            string maCN = txtTimChiNhanh.Text.Trim();
+
+            if (string.IsNullOrEmpty(maCN))
+            {
+                MessageBox.Show("Vui lòng nhập mã chi nhánh cần tìm!");
+                return;
+            }
+
+            var list = busChiNhanh.GetChiNhanhList();
+
+            var ketQua = list.Where(cn => cn.MaCN != null && cn.MaCN.Trim().Equals(maCN, StringComparison.OrdinalIgnoreCase)).ToList();
+
+            if (ketQua.Count == 0)
+            {
+                MessageBox.Show("Không tìm thấy chi nhánh có mã: " + maCN);
+            }
+
+            dgvChiNhanh.DataSource = ketQua;
+        }
     }
 }
