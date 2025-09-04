@@ -56,16 +56,16 @@ namespace BLL_QuanLyNganHang
                 return "Lỗi: " + ex.Message;
             }
         }
-        public string DaleteChiNhanh(string maChiNhanh)
+        public string DeleteChiNhanh(string MaCN)
         {
             try
             {
-                if (string.IsNullOrEmpty(maChiNhanh))
+                if (string.IsNullOrEmpty(MaCN))
                 {
                     return "Mã chi nhánh không hợp lệ.";
                 }
 
-                dalCHiNhanh.deleteChiNhanh(maChiNhanh);
+                dalCHiNhanh.deleteChiNhanh(MaCN);
                 return string.Empty;
             }
             catch (Exception ex)
