@@ -38,7 +38,7 @@ namespace DAL_QuanLyNganHang
         public string generateMaChiNhanh()
         {
             string prefix = "CN";
-            string sql = "SELECT MAX(MaChiNhanh) FROM ChiNhanh";
+            string sql = "SELECT MAX(MaCN) FROM ChiNhanh";
             List<object> thamSo = new List<object>();
             object result = DButil.ScalarQuery(sql, thamSo);
 
