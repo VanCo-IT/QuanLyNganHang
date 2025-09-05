@@ -74,5 +74,9 @@ namespace BLL_QuanLyNganHang
                 return "Lỗi: " + ex.Message;
             }
         }
+        public List<string> GetAllMaCN()
+        {
+            return dalCHiNhanh.GetOnlyMaCN();
+        }
     }
 }

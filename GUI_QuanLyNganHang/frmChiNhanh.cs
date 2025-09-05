@@ -26,10 +26,11 @@ namespace GUI_QuanLyNganHang
         {
             LoadChiNhanh();
             ClearForm();
+            LoadMaChiNhanhVaoComboBox();
         }
         private void ClearForm()
         {
-            txtMaChiNhanh.Clear();
+            cbMaCN.SelectedIndex = -1; /// tránh va chạm với hiện makh từ combobox
             txtTenChiNhanh.Clear();
             txtDiaChi.Clear();
             txtSoDienThoai.Clear();
@@ -54,7 +55,7 @@ namespace GUI_QuanLyNganHang
         private void dgvChiNhanh_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = dgvChiNhanh.Rows[e.RowIndex];
-            txtMaChiNhanh.Text = row.Cells["MaCN"].Value?.ToString();
+            cbMaCN.Text = row.Cells["MaCN"].Value?.ToString();
             txtTenChiNhanh.Text = row.Cells["TenCN"].Value?.ToString();
             txtDiaChi.Text = row.Cells["DiaChi"].Value?.ToString();
             txtSoDienThoai.Text = row.Cells["SoDienThoai"].Value?.ToString();
@@ -62,7 +63,7 @@ namespace GUI_QuanLyNganHang
 
         private void btnThemChiNhanh_Click(object sender, EventArgs e)
         {
-            string maCN = txtMaChiNhanh.Text.Trim();
+            string maCN = cbMaCN.Text.Trim();
             string tenCN = txtTenChiNhanh.Text.Trim();
             string diaChi = txtDiaChi.Text.Trim();
             string soDienThoai = txtSoDienThoai.Text.Trim();
@@ -97,7 +98,7 @@ namespace GUI_QuanLyNganHang
         {
             try
             {
-                string maCN = txtMaChiNhanh.Text.Trim();
+                string maCN = cbMaCN.Text.Trim();
                 string tenCN = txtTenChiNhanh.Text.Trim();
                 string diaChi = txtDiaChi.Text.Trim();
                 string sdt = txtSoDienThoai.Text.Trim();
@@ -132,7 +133,7 @@ namespace GUI_QuanLyNganHang
 
         private void btnXoaChiNhanh_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtMaChiNhanh.Text))
+            if (string.IsNullOrWhiteSpace(cbMaCN.Text))
             {
                 MessageBox.Show("Vui lòng chọn mã chi nhánh để xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -143,7 +144,7 @@ namespace GUI_QuanLyNganHang
             {
                 try
                 {
-                    string maCN = txtMaChiNhanh.Text.Trim();
+                    string maCN = cbMaCN.Text.Trim();
                     BUSChiNhanh busChiNhanh = new BUSChiNhanh();
                     busChiNhanh.DeleteChiNhanh(maCN);
 
@@ -184,6 +185,55 @@ namespace GUI_QuanLyNganHang
             }
 
             dgvChiNhanh.DataSource = ketQua;
+        }
+        private void LoadMaChiNhanhVaoComboBox()
+        {
+            try
+            {
+                BUSChiNhanh busChiNhanh = new BUSChiNhanh();
+                List<string> danhSachMaCN = busChiNhanh.GetAllMaCN();
+
+                cbMaCN.DataSource = danhSachMaCN;
+                cbMaCN.DropDownStyle = ComboBoxStyle.DropDownList; // Không cho nhập tay
+                cbMaCN.SelectedIndex = -1; // Không chọn sẵn
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải mã chi nhánh: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void cbMaCN_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //code khi ấn vào cbMaKH sẽ hiện thông tin để sửa 
+
+            // Kiểm tra nếu có chọn giá trị nào
+            if (cbMaCN.SelectedIndex == -1)
+            {
+                ClearForm();
+                return;
+            }
+
+            // Lấy mã khách hàng được chọn
+            string selectedMaCN = cbMaCN.SelectedValue.ToString();
+
+            // Tìm đối tượng KhachHang tương ứng trong danh sách
+            BUSChiNhanh busChiNhanh = new BUSChiNhanh();
+            List<ChiNhanh> dsChiNhanh = busChiNhanh.GetChiNhanhList();
+
+            ChiNhanh cn = dsChiNhanh.FirstOrDefault(x => x.MaCN == selectedMaCN);
+
+            if (cn != null)
+            {
+                // Hiển thị thông tin khách hàng lên form
+                txtTenChiNhanh.Text = cn.TenCN;
+                txtDiaChi.Text = cn.DiaChi;
+                txtSoDienThoai.Text = cn.SoDienThoai;
+            }
+            else
+            {
+                ClearForm();
+            }
         }
     }
 }

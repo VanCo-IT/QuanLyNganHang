@@ -14,18 +14,23 @@ namespace DAL_QuanLyNganHang
         public List<ChiNhanh> SelectBySql(string sql, List<object> args, CommandType cmdType = CommandType.Text)
         {
             List<ChiNhanh> list = new List<ChiNhanh>();
-            SqlDataReader reader = DButil.Query(sql, args);
-
-            while (reader.Read())
+            try
             {
-                ChiNhanh entity = new ChiNhanh();
-                entity.MaCN = reader["MaCN"].ToString();
-                entity.TenCN = reader["TenCN"].ToString();
-                entity.DiaChi = reader["DiaChi"].ToString();
-                entity.SoDienThoai = reader["SoDienThoai"].ToString();
-                list.Add(entity);
+                SqlDataReader reader = DButil.Query(sql, args);
+                while (reader.Read())
+                {
+                    ChiNhanh entity = new ChiNhanh();
+                    entity.MaCN = reader["MaCN"].ToString();
+                    entity.TenCN = reader["TenCN"].ToString();
+                    entity.DiaChi = reader["DiaChi"].ToString();
+                    entity.SoDienThoai = reader["SoDienThoai"].ToString();
+                    list.Add(entity);
+                }
             }
-
+            catch (Exception)
+            {
+                throw;
+            }
             return list;
         }
         public List<ChiNhanh> selectAll()
@@ -34,6 +39,14 @@ namespace DAL_QuanLyNganHang
              "SELECT *\r\nFROM ChiNhanh";
 
             return SelectBySql(sql, new List<object>());
+        }
+        public ChiNhanh selectById(string id)
+        {
+            String sql = "SELECT * FROM ChiNhanh WHERE MaCN=@0";
+            List<object> thamSo = new List<object>();
+            thamSo.Add(id);
+            List<ChiNhanh> list = SelectBySql(sql, thamSo);
+            return list.Count > 0 ? list[0] : null;
         }
         public string generateMaChiNhanh()
         {
@@ -108,6 +121,20 @@ namespace DAL_QuanLyNganHang
             {
                 throw;
             }
+        }
+        public List<string> GetOnlyMaCN()
+        {
+            List<string> danhSachMaCN = new List<string>();
+            string sql = "SELECT MaCN FROM ChiNhanh";
+            SqlDataReader reader = DButil.Query(sql, new List<object>());
+
+            while (reader.Read())
+            {
+                string maCN = reader["MaCN"].ToString();
+                danhSachMaCN.Add(maCN);
+            }
+
+            return danhSachMaCN;
         }
     }
 }
