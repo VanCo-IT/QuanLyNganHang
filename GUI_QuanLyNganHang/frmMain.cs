@@ -127,5 +127,10 @@ namespace GUI_QuanLyNganHang
         {
             openChildForm(new frmChiNhanh());
         }
+
+        private void mnuGiaoDich_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmGiaoDich());
+        }
     }
 }
