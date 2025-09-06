@@ -319,6 +319,7 @@
             mnuGiaoDich.Name = "mnuGiaoDich";
             mnuGiaoDich.Size = new Size(113, 23);
             mnuGiaoDich.Text = "Giao dịch";
+            mnuGiaoDich.Click += mnuGiaoDich_Click;
             // 
             // mnuKhoanvay
             // 
@@ -366,6 +367,7 @@
             chiNhánhToolStripMenuItem.Name = "chiNhánhToolStripMenuItem";
             chiNhánhToolStripMenuItem.Size = new Size(113, 20);
             chiNhánhToolStripMenuItem.Text = "Chi nhánh?";
+            chiNhánhToolStripMenuItem.Click += chiNhánhToolStripMenuItem_Click;
             // 
             // pnMain
             // 

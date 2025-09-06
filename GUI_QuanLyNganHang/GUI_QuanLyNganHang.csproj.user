@@ -4,10 +4,16 @@
     <Compile Update="frmChaoMung.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="frmChiNhanh.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="frmDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="frmDoiMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmGiaoDich.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="frmKhachHang.cs">
