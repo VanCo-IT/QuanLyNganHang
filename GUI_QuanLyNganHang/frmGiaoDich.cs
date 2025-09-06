@@ -16,5 +16,17 @@ namespace GUI_QuanLyNganHang
         {
             InitializeComponent();
         }
+
+        private void frmGiaoDich_Load(object sender, EventArgs e)
+        {
+            ClearForm();
+            LoadDanhSachGiaoDich();
+        }
+        private void ClearForm()
+        {
+            cbMaGD.Items.Clear();
+            txtSoTaiKhoan.Clear();
+
+        }
     }
 }
