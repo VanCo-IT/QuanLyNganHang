@@ -220,6 +220,9 @@ namespace GUI_QuanLyNganHang
 
                 // Gọi lại hàm lọc theo số tài khoản đang chọn
                 cbSoTaiKhoan_SelectedIndexChanged(null, null);
+                // Mở form hóa đơn để in
+                frmHoaDon frm = new frmHoaDon(gd);
+                frm.ShowDialog();
 
                 ClearFormDataInput(); // Không gọi ClearForm để không reset combo
             }
