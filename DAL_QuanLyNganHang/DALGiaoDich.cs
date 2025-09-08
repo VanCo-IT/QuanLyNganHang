@@ -20,7 +20,7 @@ namespace DAL_QuanLyNganHang
                 while (reader.Read())
                 {
                     GiaoDich entity = new GiaoDich();
-                    entity.MaGD = reader.GetString("MaGD");
+                    entity.MaGD = reader["MaGD"].ToString();
                     entity.SoTaiKhoan = reader.GetString("SoTaiKhoan");
                     entity.NgayGD = Convert.ToDateTime(reader["NgayGD"]);
                     entity.SoTien = Convert.ToDecimal(reader["SoTien"]);
