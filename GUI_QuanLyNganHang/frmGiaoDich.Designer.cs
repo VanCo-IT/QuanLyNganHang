@@ -30,16 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGiaoDich));
             pnThongTinGiaoDich = new Panel();
-            cbMaGD = new ComboBox();
+            txtMaGD = new TextBox();
+            cbSoTaiKhoan = new ComboBox();
+            dtpNgayGD = new DateTimePicker();
             panel3 = new Panel();
             rbDaHuy = new RadioButton();
             rbDaThanhToan = new RadioButton();
             label8 = new Label();
             txtMoTa = new TextBox();
-            txtLoaiGiaoDich = new TextBox();
+            txtLoaiGD = new TextBox();
             txtSoTien = new TextBox();
-            txtNgayGiaoDich = new TextBox();
-            txtSoTaiKhoan = new TextBox();
             label6 = new Label();
             label5 = new Label();
             label4 = new Label();
@@ -49,10 +49,10 @@
             pictureBox1 = new PictureBox();
             gbChucNang = new GroupBox();
             btnLamMoiGD = new Button();
-            btnXuatHoaDon = new Button();
             btnThemGD = new Button();
             btnCapNhatGD = new Button();
             dgvGiaoDich = new DataGridView();
+            btnXuatHoaDon = new Button();
             pnThongTinGiaoDich.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -63,14 +63,14 @@
             // pnThongTinGiaoDich
             // 
             pnThongTinGiaoDich.BackColor = Color.FromArgb(255, 128, 0);
-            pnThongTinGiaoDich.Controls.Add(cbMaGD);
+            pnThongTinGiaoDich.Controls.Add(txtMaGD);
+            pnThongTinGiaoDich.Controls.Add(cbSoTaiKhoan);
+            pnThongTinGiaoDich.Controls.Add(dtpNgayGD);
             pnThongTinGiaoDich.Controls.Add(panel3);
             pnThongTinGiaoDich.Controls.Add(label8);
             pnThongTinGiaoDich.Controls.Add(txtMoTa);
-            pnThongTinGiaoDich.Controls.Add(txtLoaiGiaoDich);
+            pnThongTinGiaoDich.Controls.Add(txtLoaiGD);
             pnThongTinGiaoDich.Controls.Add(txtSoTien);
-            pnThongTinGiaoDich.Controls.Add(txtNgayGiaoDich);
-            pnThongTinGiaoDich.Controls.Add(txtSoTaiKhoan);
             pnThongTinGiaoDich.Controls.Add(label6);
             pnThongTinGiaoDich.Controls.Add(label5);
             pnThongTinGiaoDich.Controls.Add(label4);
@@ -84,19 +84,34 @@
             pnThongTinGiaoDich.Size = new Size(884, 100);
             pnThongTinGiaoDich.TabIndex = 0;
             // 
-            // cbMaGD
+            // txtMaGD
             // 
-            cbMaGD.FormattingEnabled = true;
-            cbMaGD.Location = new Point(131, 27);
-            cbMaGD.Name = "cbMaGD";
-            cbMaGD.Size = new Size(145, 23);
-            cbMaGD.TabIndex = 3;
+            txtMaGD.Location = new Point(131, 30);
+            txtMaGD.Name = "txtMaGD";
+            txtMaGD.Size = new Size(145, 23);
+            txtMaGD.TabIndex = 28;
+            // 
+            // cbSoTaiKhoan
+            // 
+            cbSoTaiKhoan.FormattingEnabled = true;
+            cbSoTaiKhoan.Location = new Point(316, 27);
+            cbSoTaiKhoan.Name = "cbSoTaiKhoan";
+            cbSoTaiKhoan.Size = new Size(145, 23);
+            cbSoTaiKhoan.TabIndex = 3;
+            cbSoTaiKhoan.SelectedIndexChanged += cbSoTaiKhoan_SelectedIndexChanged;
+            // 
+            // dtpNgayGD
+            // 
+            dtpNgayGD.Location = new Point(487, 27);
+            dtpNgayGD.Name = "dtpNgayGD";
+            dtpNgayGD.Size = new Size(200, 23);
+            dtpNgayGD.TabIndex = 27;
             // 
             // panel3
             // 
             panel3.Controls.Add(rbDaHuy);
             panel3.Controls.Add(rbDaThanhToan);
-            panel3.Location = new Point(734, 7);
+            panel3.Location = new Point(757, 12);
             panel3.Name = "panel3";
             panel3.Size = new Size(124, 74);
             panel3.TabIndex = 26;
@@ -127,7 +142,7 @@
             // 
             label8.AutoSize = true;
             label8.ForeColor = Color.Red;
-            label8.Location = new Point(669, 18);
+            label8.Location = new Point(692, 23);
             label8.Name = "label8";
             label8.Size = new Size(60, 15);
             label8.TabIndex = 25;
@@ -140,12 +155,12 @@
             txtMoTa.Size = new Size(145, 23);
             txtMoTa.TabIndex = 12;
             // 
-            // txtLoaiGiaoDich
+            // txtLoaiGD
             // 
-            txtLoaiGiaoDich.Location = new Point(316, 71);
-            txtLoaiGiaoDich.Name = "txtLoaiGiaoDich";
-            txtLoaiGiaoDich.Size = new Size(145, 23);
-            txtLoaiGiaoDich.TabIndex = 11;
+            txtLoaiGD.Location = new Point(316, 71);
+            txtLoaiGD.Name = "txtLoaiGD";
+            txtLoaiGD.Size = new Size(145, 23);
+            txtLoaiGD.TabIndex = 11;
             // 
             // txtSoTien
             // 
@@ -153,20 +168,7 @@
             txtSoTien.Name = "txtSoTien";
             txtSoTien.Size = new Size(145, 23);
             txtSoTien.TabIndex = 10;
-            // 
-            // txtNgayGiaoDich
-            // 
-            txtNgayGiaoDich.Location = new Point(487, 27);
-            txtNgayGiaoDich.Name = "txtNgayGiaoDich";
-            txtNgayGiaoDich.Size = new Size(145, 23);
-            txtNgayGiaoDich.TabIndex = 9;
-            // 
-            // txtSoTaiKhoan
-            // 
-            txtSoTaiKhoan.Location = new Point(316, 27);
-            txtSoTaiKhoan.Name = "txtSoTaiKhoan";
-            txtSoTaiKhoan.Size = new Size(145, 23);
-            txtSoTaiKhoan.TabIndex = 8;
+            txtSoTien.KeyPress += txtSoTien_KeyPress;
             // 
             // label6
             // 
@@ -236,8 +238,8 @@
             // gbChucNang
             // 
             gbChucNang.BackColor = Color.FromArgb(255, 255, 128);
-            gbChucNang.Controls.Add(btnLamMoiGD);
             gbChucNang.Controls.Add(btnXuatHoaDon);
+            gbChucNang.Controls.Add(btnLamMoiGD);
             gbChucNang.Controls.Add(btnThemGD);
             gbChucNang.Controls.Add(btnCapNhatGD);
             gbChucNang.Dock = DockStyle.Right;
@@ -259,18 +261,7 @@
             btnLamMoiGD.Text = "Làm mới";
             btnLamMoiGD.TextImageRelation = TextImageRelation.ImageAboveText;
             btnLamMoiGD.UseVisualStyleBackColor = true;
-            // 
-            // btnXuatHoaDon
-            // 
-            btnXuatHoaDon.ForeColor = Color.LightSeaGreen;
-            btnXuatHoaDon.Image = (Image)resources.GetObject("btnXuatHoaDon.Image");
-            btnXuatHoaDon.Location = new Point(13, 239);
-            btnXuatHoaDon.Name = "btnXuatHoaDon";
-            btnXuatHoaDon.Size = new Size(77, 87);
-            btnXuatHoaDon.TabIndex = 11;
-            btnXuatHoaDon.Text = "Xuất hóa đơn";
-            btnXuatHoaDon.TextImageRelation = TextImageRelation.ImageAboveText;
-            btnXuatHoaDon.UseVisualStyleBackColor = true;
+            btnLamMoiGD.Click += btnLamMoiGD_Click;
             // 
             // btnThemGD
             // 
@@ -283,6 +274,7 @@
             btnThemGD.Text = "Thêm";
             btnThemGD.TextImageRelation = TextImageRelation.ImageAboveText;
             btnThemGD.UseVisualStyleBackColor = true;
+            btnThemGD.Click += btnThemGD_Click;
             // 
             // btnCapNhatGD
             // 
@@ -295,6 +287,7 @@
             btnCapNhatGD.Text = "Cập nhật";
             btnCapNhatGD.TextImageRelation = TextImageRelation.ImageAboveText;
             btnCapNhatGD.UseVisualStyleBackColor = true;
+            btnCapNhatGD.Click += btnCapNhatGD_Click;
             // 
             // dgvGiaoDich
             // 
@@ -304,6 +297,19 @@
             dgvGiaoDich.Name = "dgvGiaoDich";
             dgvGiaoDich.Size = new Size(684, 461);
             dgvGiaoDich.TabIndex = 2;
+            dgvGiaoDich.CellDoubleClick += dgvGiaoDich_CellDoubleClick;
+            // 
+            // btnXuatHoaDon
+            // 
+            btnXuatHoaDon.ForeColor = Color.LightSeaGreen;
+            btnXuatHoaDon.Image = (Image)resources.GetObject("btnXuatHoaDon.Image");
+            btnXuatHoaDon.Location = new Point(8, 266);
+            btnXuatHoaDon.Name = "btnXuatHoaDon";
+            btnXuatHoaDon.Size = new Size(77, 77);
+            btnXuatHoaDon.TabIndex = 13;
+            btnXuatHoaDon.Text = "Xuất hóa đơn";
+            btnXuatHoaDon.TextImageRelation = TextImageRelation.ImageAboveText;
+            btnXuatHoaDon.UseVisualStyleBackColor = true;
             // 
             // frmGiaoDich
             // 
@@ -315,6 +321,7 @@
             Controls.Add(pnThongTinGiaoDich);
             Name = "frmGiaoDich";
             Text = "frmGiaoDich";
+            Load += frmGiaoDich_Load;
             pnThongTinGiaoDich.ResumeLayout(false);
             pnThongTinGiaoDich.PerformLayout();
             panel3.ResumeLayout(false);
@@ -335,14 +342,11 @@
         private Label label3;
         private Label label2;
         private Label label1;
-        private TextBox txtNgayGiaoDich;
-        private TextBox txtSoTaiKhoan;
         private TextBox txtMoTa;
-        private TextBox txtLoaiGiaoDich;
+        private TextBox txtLoaiGD;
         private TextBox txtSoTien;
         private GroupBox gbChucNang;
         private Button btnLamMoiGD;
-        private Button btnXuatHoaDon;
         private Button btnThemGD;
         private Button btnCapNhatGD;
         private DataGridView dgvGiaoDich;
@@ -350,6 +354,9 @@
         private RadioButton rbDaHuy;
         private RadioButton rbDaThanhToan;
         private Label label8;
-        private ComboBox cbMaGD;
+        private DateTimePicker dtpNgayGD;
+        private ComboBox cbSoTaiKhoan;
+        private TextBox txtMaGD;
+        private Button btnXuatHoaDon;
     }
 }

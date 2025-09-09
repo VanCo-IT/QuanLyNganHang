@@ -81,3 +81,6 @@ D:\VanCo\A_QuanLyNganHang\QuanLyNganHang\GUI_QuanLyNganHang\obj\Debug\net8.0-win
 D:\VanCo\A_QuanLyNganHang\QuanLyNganHang\GUI_QuanLyNganHang\obj\Debug\net8.0-windows\GUI_QuanLyNganHang.frmTaiKhoan.resources
 D:\VanCo\A_QuanLyNganHang\QuanLyNganHang\GUI_QuanLyNganHang\obj\Debug\net8.0-windows\GUI_QuanLyNganHang.frmChiNhanh.resources
 D:\VanCo\A_QuanLyNganHang\QuanLyNganHang\GUI_QuanLyNganHang\obj\Debug\net8.0-windows\GUI_QuanLyNganHang.frmGiaoDich.resources
+D:\VanCo\A_QuanLyNganHang\QuanLyNganHang\GUI_QuanLyNganHang\obj\Debug\net8.0-windows\GUI_QuanLyNganHang.frmHoaDon.resources
+D:\VanCo\A_QuanLyNganHang\QuanLyNganHang\GUI_QuanLyNganHang\bin\Debug\net8.0-windows\BouncyCastle.Cryptography.dll
+D:\VanCo\A_QuanLyNganHang\QuanLyNganHang\GUI_QuanLyNganHang\bin\Debug\net8.0-windows\itextsharp.dll
