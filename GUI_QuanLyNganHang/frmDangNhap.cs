@@ -74,5 +74,18 @@ namespace GUI_QuanLyNganHang
         {
             txtMatKhau.PasswordChar = (txtMatKhau.PasswordChar == '*') ? '\0' : '*';
         }
+
+        private void cbQuenMK_CheckedChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtEmail.Text))
+            {
+                MessageBox.Show("Vui lòng nhập Email để xác thực!", "Thông báo");
+                return;
+            }
+
+            frmQuenMK frm = new frmQuenMK();
+            frm.EmailDangQuen = txtEmail.Text.Trim();  // Truyền email sang form xác thực
+            frm.ShowDialog();
+        }
     }
 }

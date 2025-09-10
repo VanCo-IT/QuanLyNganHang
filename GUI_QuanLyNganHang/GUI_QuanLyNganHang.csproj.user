@@ -28,6 +28,12 @@
     <Compile Update="frmNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="frmNhapMa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmQuenMK.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="frmTaiKhoan.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDangNhap));
             panel1 = new Panel();
+            cbQuenMK = new CheckBox();
             cbHienMK = new CheckBox();
             btnThoat = new Button();
             txtEmail = new TextBox();
@@ -48,6 +49,7 @@
             // 
             panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
             panel1.BackgroundImageLayout = ImageLayout.Stretch;
+            panel1.Controls.Add(cbQuenMK);
             panel1.Controls.Add(cbHienMK);
             panel1.Controls.Add(btnThoat);
             panel1.Controls.Add(txtEmail);
@@ -63,10 +65,21 @@
             panel1.Size = new Size(884, 561);
             panel1.TabIndex = 0;
             // 
+            // cbQuenMK
+            // 
+            cbQuenMK.AutoSize = true;
+            cbQuenMK.Location = new Point(777, 338);
+            cbQuenMK.Name = "cbQuenMK";
+            cbQuenMK.Size = new Size(108, 19);
+            cbQuenMK.TabIndex = 27;
+            cbQuenMK.Text = "Quên mật khẩu\r\n";
+            cbQuenMK.UseVisualStyleBackColor = true;
+            cbQuenMK.CheckedChanged += cbQuenMK_CheckedChanged;
+            // 
             // cbHienMK
             // 
             cbHienMK.AutoSize = true;
-            cbHienMK.Location = new Point(661, 349);
+            cbHienMK.Location = new Point(654, 338);
             cbHienMK.Name = "cbHienMK";
             cbHienMK.Size = new Size(104, 19);
             cbHienMK.TabIndex = 26;
@@ -189,5 +202,6 @@
         private PictureBox pictureBox1;
         private TextBox txtMatKhau;
         private CheckBox cbHienMK;
+        private CheckBox cbQuenMK;
     }
 }

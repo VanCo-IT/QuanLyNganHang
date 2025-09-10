@@ -15,6 +15,7 @@ namespace GUI_QuanLyNganHang
     public partial class frmDoiMatKhau : Form
     {
         BUSNhanVien busNhanVien = new BUSNhanVien();
+        public string EmailDangDoi { get; set; }
         public frmDoiMatKhau()
         {
             InitializeComponent();
