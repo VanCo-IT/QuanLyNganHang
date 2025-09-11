@@ -28,11 +28,11 @@ namespace UTIL_QuanLyNganHang
                 $"<div style='font-family:Segoe UI, sans-serif;font-size:14px'>" +
                 $"<img src='https://raw.githubusercontent.com/VanCo-IT/Logo/refs/heads/main/Ng%C3%A2n%20h%C3%A0ng%20V%C4%83n%20C%C3%B3.png' alt='Logo' style='height:50px; margin-bottom:10px;' />" +
                 $"<p>Xin chào,</p>" +
-                $"<p>Bạn vừa yêu cầu <b>đặt lại mật khẩu</b> trên hệ thống.</p>" +
+                $"<p>Bạn vừa yêu cầu <b>đặt lại mật khẩu</b> trên hệ thống của ngân hàng VanCoBanking-1 ứng dụng do lập trình viên Văn Có của chúng tôi tạo ra.</p>" +
                 $"<p><b>Mã xác minh của bạn là: <span style='color:red;font-size:18px'>{maXacMinh}</span></b></p>" +
                 $"<p>Mã có hiệu lực trong vòng <b>5 phút</b>.</p>" +
-                $"<br><p style='font-size:12px;color:#888'>Nếu bạn không thực hiện yêu cầu này, vui lòng bỏ qua email này.</p>" +
-                $"<p style='font-size:12px;color:#888'><i>Ngân hàng 123 - Bảo mật là ưu tiên hàng đầu.</i></p>" +
+                $"<br><p style='font-size:12px;color:#888'>Nếu bạn không thực hiện yêu cầu này, vui lòng bỏ qua email hoặc liên hệ Mr.Văn Có để có thêm thông tin.</p>" +
+                $"<p style='font-size:12px;color:#888'><i>Ngân hàng VanCoBanking - Bảo mật là ưu tiên hàng đầu của chúng tôi.</i></p>" +
                 $"</div>";
 
 
