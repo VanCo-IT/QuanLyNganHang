@@ -19,7 +19,6 @@ namespace GUI_QuanLyNganHang
         {
             InitializeComponent();
         }
-
         private void frmTaiKhoan_Load(object sender, EventArgs e)
         {
             CleanForm();
@@ -38,7 +37,6 @@ namespace GUI_QuanLyNganHang
             dtpNgayMo.Value = DateTime.Now;
             cbMaKH.SelectedIndex = -1;
         }
-
         private void txtSoDu_KeyPress(object sender, KeyPressEventArgs e)//code này để nhập số có thập phân(1 lần . )
         {
             TextBox textBox = sender as TextBox;
@@ -96,7 +94,6 @@ namespace GUI_QuanLyNganHang
                 MessageBox.Show("Lỗi khi tải danh sách tài khoản: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void dgvTaiKhoan_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
@@ -161,10 +158,6 @@ namespace GUI_QuanLyNganHang
                 else
                 {
                     //// Nếu không có tài khoản thì clear form
-                    //txtSoTaiKhoan.Clear();
-                    //txtSoDu.Clear();
-                    //txtLoaiTaiKhoan.Clear();
-                    //dtpNgayMo.Value = DateTime.Now;
                     CleanForm();
                 }
             }
@@ -261,6 +254,7 @@ namespace GUI_QuanLyNganHang
         private void btnLamMoiTaiKhoan_Click(object sender, EventArgs e)
         {
             CleanForm();
+            LoadDanhSachTaiKhoan();
         }
 
         private void btnTimTaiKhoan_Click(object sender, EventArgs e)
