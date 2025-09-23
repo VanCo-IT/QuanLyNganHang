@@ -1,5 +1,4 @@
 ﻿using BLL_QuanLyNganHang;
-using DAL_QuanLyNganHang;
 using DTO_QuanLyNganHang;
 using System;
 using System.Collections.Generic;
@@ -26,6 +25,7 @@ namespace GUI_QuanLyNganHang
             CleanForm();
             LoadDanhSachTaiKhoan();
             LoadMaKhachHangVaoComboBox();
+            cbMaKH.SelectedIndex = -1;
             //code này để Đặt chữ hướng dẫn ban đầu.
             txtTimTaiKhoan.Text = "Vui lòng nhập số tài khoản cần tìm kiếm";
             txtTimTaiKhoan.ForeColor = Color.Gray;
@@ -65,6 +65,12 @@ namespace GUI_QuanLyNganHang
                 // Gán dữ liệu vào DataGridView
                 dgvTaiKhoan.DataSource = null;
                 dgvTaiKhoan.DataSource = danhSach;
+                //dgvTaiKhoan.AutoGenerateColumns = true;
+
+                //foreach (DataGridViewColumn col in dgvTaiKhoan.Columns)
+                //{
+                //    MessageBox.Show("Tên cột: " + col.Name + " - DataPropertyName: " + col.DataPropertyName);
+                //}
 
                 // Gán tiêu đề cột (chỉ khi đã có dữ liệu)
                 if (dgvTaiKhoan.Columns["SoTaiKhoan"] != null)
@@ -93,21 +99,23 @@ namespace GUI_QuanLyNganHang
 
         private void dgvTaiKhoan_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = dgvTaiKhoan.Rows[e.RowIndex];
-                // Đổ dữ liệu vào các TextBox trên form
-                txtSoTaiKhoan.Text = row.Cells["SoTaiKhoan"].Value?.ToString();
-                cbMaKH.Text = row.Cells["MaKH"].Value?.ToString();
-                txtSoDu.Text = row.Cells["SoDu"].Value?.ToString();
-                txtLoaiTaiKhoan.Text = row.Cells["LoaiTaiKhoan"].Value?.ToString();
-                dtpNgayMo.Value = Convert.ToDateTime(row.Cells["NgayMo"].Value);
+            if (e.RowIndex < 0) return;
 
-                // Bật nút "Sửa"
-                btnThemTaiKhoan.Enabled = false;
-                btnCapNhatTaiKhoan.Enabled = true;
-                btnXoaTaiKhoan.Enabled = true;
-            }
+            var row = dgvTaiKhoan.Rows[e.RowIndex];
+            var tk = row.DataBoundItem as TaiKhoan;   // <-- Lấy trực tiếp object bind
+
+            if (tk == null) return;
+
+            txtSoTaiKhoan.Text = tk.SoTaiKhoan ?? "";
+            // Chọn bằng SelectedValue để giữ consistency (không gán cbMaKH.Text)
+            cbMaKH.SelectedValue = tk.MaKH;
+            txtSoDu.Text = tk.SoDu.ToString("N2");   // thống nhất hiển thị số
+            txtLoaiTaiKhoan.Text = tk.LoaiTaiKhoan ?? "";
+            dtpNgayMo.Value = tk.NgayMo;             // trực tiếp lấy DateTime từ DTO
+
+            btnThemTaiKhoan.Enabled = false;
+            btnCapNhatTaiKhoan.Enabled = true;
+            btnXoaTaiKhoan.Enabled = true;
         }
         private void LoadMaKhachHangVaoComboBox()
         {
@@ -123,7 +131,11 @@ namespace GUI_QuanLyNganHang
         private void cbMaKH_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             if (cbMaKH.SelectedIndex == -1 || cbMaKH.SelectedValue == null)
+            {
+                LoadDanhSachTaiKhoan();
                 return;
+            }
+                
 
             string selectedMaKH = cbMaKH.SelectedValue.ToString();
 
@@ -142,17 +154,18 @@ namespace GUI_QuanLyNganHang
                     TaiKhoan tk = taiKhoanTheoKH[0]; // lấy tài khoản đầu tiên
 
                     txtSoTaiKhoan.Text = tk.SoTaiKhoan;
-                    txtSoDu.Text = tk.SoDu.ToString("N2");
+                    txtSoDu.Text = tk.SoDu.ToString();
                     txtLoaiTaiKhoan.Text = tk.LoaiTaiKhoan;
                     dtpNgayMo.Value = tk.NgayMo;
                 }
                 else
                 {
-                    // Nếu không có tài khoản thì clear form
-                    txtSoTaiKhoan.Clear();
-                    txtSoDu.Clear();
-                    txtLoaiTaiKhoan.Clear();
-                    dtpNgayMo.Value = DateTime.Now;
+                    //// Nếu không có tài khoản thì clear form
+                    //txtSoTaiKhoan.Clear();
+                    //txtSoDu.Clear();
+                    //txtLoaiTaiKhoan.Clear();
+                    //dtpNgayMo.Value = DateTime.Now;
+                    CleanForm();
                 }
             }
             catch (Exception ex)
@@ -256,7 +269,8 @@ namespace GUI_QuanLyNganHang
             {
                 BUSTaiKhoan busTaiKhoan = new BUSTaiKhoan();
                 string maKH = cbMaKH.SelectedValue != null ? cbMaKH.SelectedValue.ToString() : "";
-                string soTaiKhoan = txtSoTaiKhoan.Text.Trim();
+                string soTaiKhoan = txtTimTaiKhoan.Text.Trim();
+                if (soTaiKhoan == "Vui lòng nhập số tài khoản cần tìm kiếm") soTaiKhoan = "";
 
                 MessageBox.Show($"Mã KH: {maKH}\nSố tài khoản: {soTaiKhoan}");
 
