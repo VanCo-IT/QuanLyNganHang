@@ -252,7 +252,7 @@
             mnuHeThong.Font = new Font("Segoe UI", 12F);
             mnuHeThong.Image = (Image)resources.GetObject("mnuHeThong.Image");
             mnuHeThong.Name = "mnuHeThong";
-            mnuHeThong.Size = new Size(113, 25);
+            mnuHeThong.Size = new Size(102, 25);
             mnuHeThong.Text = "Hệ thống";
             // 
             // mnuHeThong_DoiMatKhau
@@ -293,7 +293,7 @@
             mnuKhachHang.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             mnuKhachHang.Image = (Image)resources.GetObject("mnuKhachHang.Image");
             mnuKhachHang.Name = "mnuKhachHang";
-            mnuKhachHang.Size = new Size(113, 23);
+            mnuKhachHang.Size = new Size(102, 23);
             mnuKhachHang.Text = "Khách hàng";
             // 
             // mnuKhachHang_QLKhachHang
@@ -317,7 +317,7 @@
             mnuGiaoDich.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             mnuGiaoDich.Image = (Image)resources.GetObject("mnuGiaoDich.Image");
             mnuGiaoDich.Name = "mnuGiaoDich";
-            mnuGiaoDich.Size = new Size(113, 23);
+            mnuGiaoDich.Size = new Size(102, 23);
             mnuGiaoDich.Text = "Giao dịch";
             mnuGiaoDich.Click += mnuGiaoDich_Click;
             // 
@@ -327,7 +327,7 @@
             mnuKhoanvay.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             mnuKhoanvay.Image = (Image)resources.GetObject("mnuKhoanvay.Image");
             mnuKhoanvay.Name = "mnuKhoanvay";
-            mnuKhoanvay.Size = new Size(113, 23);
+            mnuKhoanvay.Size = new Size(102, 23);
             mnuKhoanvay.Text = "Khoản vay";
             // 
             // mnuKhoanvay_DSKhoanVay
@@ -349,7 +349,7 @@
             mnuNhanVien.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             mnuNhanVien.Image = (Image)resources.GetObject("mnuNhanVien.Image");
             mnuNhanVien.Name = "mnuNhanVien";
-            mnuNhanVien.Size = new Size(113, 23);
+            mnuNhanVien.Size = new Size(102, 23);
             mnuNhanVien.Text = "Nhân viên";
             mnuNhanVien.Click += mnuNhanVien_Click;
             // 
@@ -358,14 +358,14 @@
             mnuTroGiup.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             mnuTroGiup.Image = (Image)resources.GetObject("mnuTroGiup.Image");
             mnuTroGiup.Name = "mnuTroGiup";
-            mnuTroGiup.Size = new Size(113, 23);
+            mnuTroGiup.Size = new Size(102, 23);
             mnuTroGiup.Text = "Trợ giúp";
             // 
             // chiNhánhToolStripMenuItem
             // 
             chiNhánhToolStripMenuItem.Image = (Image)resources.GetObject("chiNhánhToolStripMenuItem.Image");
             chiNhánhToolStripMenuItem.Name = "chiNhánhToolStripMenuItem";
-            chiNhánhToolStripMenuItem.Size = new Size(113, 20);
+            chiNhánhToolStripMenuItem.Size = new Size(102, 20);
             chiNhánhToolStripMenuItem.Text = "Chi nhánh?";
             chiNhánhToolStripMenuItem.Click += chiNhánhToolStripMenuItem_Click;
             // 
