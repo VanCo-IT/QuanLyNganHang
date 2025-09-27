@@ -16,27 +16,27 @@ namespace DAL_QuanLyNganHang
 
         public NhanVien? getNhanVien1(string email, string password)
         {
-            string sql = "SELECT * FROM NhanVien WHERE Email=@0 AND MatKhau=@1 LIMIT 1";
-            List<object> thamSo = new List<object>();
-            thamSo.Add(email);
-            thamSo.Add(password);
-            SQLiteDataReader reader = DButil.Query(sql, thamSo);
-            if (reader.HasRows)
+            const string sql = "SELECT * FROM NhanVien WHERE Email=@0 AND MatKhau=@1 LIMIT 1";
+            var thamSo = new List<object> { email, password };
+
+            using (var reader = DButil.Query(sql, thamSo))
             {
                 if (reader.Read())
                 {
-                    NhanVien nv = new NhanVien();
-                    nv.MaNV = reader["MaNV"].ToString();
-                    nv.TenNV = reader["TenNV"].ToString();
-                    nv.TenDN = reader["TenDN"].ToString();
-                    nv.SDT = reader["SDT"].ToString();
-                    nv.Email = reader["Email"].ToString();
-                    nv.MatKhau = reader["MatKhau"].ToString();
-                    nv.VaiTro = Convert.ToBoolean(reader["VaiTro"]);
-                    nv.TrangThai = Convert.ToBoolean(reader["TrangThai"]);
-                    return nv;
+                    return new NhanVien
+                    {
+                        MaNV = reader["MaNV"].ToString(),
+                        TenNV = reader["TenNV"].ToString(),
+                        TenDN = reader["TenDN"].ToString(),
+                        SDT = reader["SDT"].ToString(),
+                        Email = reader["Email"].ToString(),
+                        MatKhau = reader["MatKhau"].ToString(),
+                        VaiTro = Convert.ToBoolean(reader["VaiTro"]),
+                        TrangThai = Convert.ToBoolean(reader["TrangThai"])
+                    };
                 }
             }
+
             return null;
         }
 
