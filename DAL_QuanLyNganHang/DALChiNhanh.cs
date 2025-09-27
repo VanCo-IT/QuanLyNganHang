@@ -1,5 +1,6 @@
 ﻿using DTO_QuanLyNganHang;
-using Microsoft.Data.SqlClient;
+//using Microsoft.Data.SqlClient;
+using System.Data.SQLite;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -16,7 +17,7 @@ namespace DAL_QuanLyNganHang
             List<ChiNhanh> list = new List<ChiNhanh>();
             try
             {
-                SqlDataReader reader = DButil.Query(sql, args);
+                SQLiteDataReader reader = DButil.Query(sql, args);
                 while (reader.Read())
                 {
                     ChiNhanh entity = new ChiNhanh();
@@ -126,7 +127,7 @@ namespace DAL_QuanLyNganHang
         {
             List<string> danhSachMaCN = new List<string>();
             string sql = "SELECT MaCN FROM ChiNhanh";
-            SqlDataReader reader = DButil.Query(sql, new List<object>());
+            SQLiteDataReader reader = DButil.Query(sql, new List<object>());
 
             while (reader.Read())
             {

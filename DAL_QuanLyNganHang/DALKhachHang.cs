@@ -1,5 +1,6 @@
 ﻿using DTO_QuanLyNganHang;
-using Microsoft.Data.SqlClient;
+//using Microsoft.Data.SqlClient;
+using System.Data.SQLite;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -16,18 +17,21 @@ namespace DAL_QuanLyNganHang
             List<KhachHang> list = new List<KhachHang>();
             try
             {
-                SqlDataReader reader = DButil.Query(sql, args);
+                SQLiteDataReader reader = DButil.Query(sql, args);
                 while (reader.Read())
                 {
                     KhachHang entity = new KhachHang();
-                    entity.MaKH = reader.GetString("MaKH");
-                    entity.TenKH = reader.GetString("TenKH");
-                    entity.CCCD = reader.GetString("CCCD");
-                    entity.DiaChi = reader.GetString("DiaChi");
-                    entity.SDT = reader.GetString("SDT");
-                    entity.Email = reader.GetString("Email");
-                    entity.MatKhau = reader.GetString("MatKhau");
-                    entity.TrangThai = reader.GetBoolean(reader.GetOrdinal("TrangThai"));
+                    entity.MaKH = reader["MaKH"].ToString();
+                    entity.TenKH = reader["TenKH"].ToString();
+                    entity.CCCD = reader["CCCD"].ToString();
+                    entity.DiaChi = reader["DiaChi"].ToString();
+                    entity.SDT = reader["SDT"].ToString();
+                    entity.Email = reader["Email"].ToString();
+                    entity.MatKhau = reader["MatKhau"].ToString();
+
+                    entity.TrangThai = !reader.IsDBNull(reader.GetOrdinal("TrangThai"))
+                    && Convert.ToBoolean(reader["TrangThai"]);
+
                     int indexNgayDangNhapCuoi = reader.GetOrdinal("NgayDangNhapCuoi");
                     entity.NgayDangNhapCuoi = !reader.IsDBNull(indexNgayDangNhapCuoi)
                         ? reader.GetDateTime(indexNgayDangNhapCuoi)
@@ -171,7 +175,7 @@ namespace DAL_QuanLyNganHang
         {
             List<string> danhSachMaKH = new List<string>();
             string sql = "SELECT MaKH FROM KhachHang";
-            SqlDataReader reader = DButil.Query(sql, new List<object>());
+            SQLiteDataReader reader = DButil.Query(sql, new List<object>());
 
             while (reader.Read())
             {

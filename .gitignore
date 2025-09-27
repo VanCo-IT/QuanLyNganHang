@@ -42,7 +42,7 @@ ehthumbs.db
 *.bak
 *.cache
 *.dbmdl
-*.db
+#*.db
 
 # NuGet packages
 *.nupkg

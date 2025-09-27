@@ -1,5 +1,6 @@
 ﻿using DTO_QuanLyNganHang;
-using Microsoft.Data.SqlClient;
+//using Microsoft.Data.SqlClient;
+using System.Data.SQLite;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -11,23 +12,15 @@ namespace DAL_QuanLyNganHang
 {
     public class DALNhanVien
     {
-        public NhanVien getNhanVien(string email, string password)
-        {
-            string sql = "SELECT * FROM NhanVien WHERE Email=@0 AND MatKhau=@1";
-            List<object> thamSo = new List<object>();
-            thamSo.Add(email);
-            thamSo.Add(password);
-            NhanVien nv = DButil.Value<NhanVien>(sql, thamSo);
-            return nv;
-        }
+        
 
         public NhanVien? getNhanVien1(string email, string password)
         {
-            string sql = "SELECT Top 1 * FROM NhanVien WHERE Email=@0 AND MatKhau=@1";
+            string sql = "SELECT * FROM NhanVien WHERE Email=@0 AND MatKhau=@1 LIMIT 1";
             List<object> thamSo = new List<object>();
             thamSo.Add(email);
             thamSo.Add(password);
-            SqlDataReader reader = DButil.Query(sql, thamSo);
+            SQLiteDataReader reader = DButil.Query(sql, thamSo);
             if (reader.HasRows)
             {
                 if (reader.Read())
@@ -39,8 +32,8 @@ namespace DAL_QuanLyNganHang
                     nv.SDT = reader["SDT"].ToString();
                     nv.Email = reader["Email"].ToString();
                     nv.MatKhau = reader["MatKhau"].ToString();
-                    nv.VaiTro = bool.Parse(reader["VaiTro"].ToString());
-                    nv.TrangThai = bool.Parse(reader["TrangThai"].ToString());
+                    nv.VaiTro = Convert.ToBoolean(reader["VaiTro"]);
+                    nv.TrangThai = Convert.ToBoolean(reader["TrangThai"]);
                     return nv;
                 }
             }
@@ -69,18 +62,22 @@ namespace DAL_QuanLyNganHang
             List<NhanVien> list = new List<NhanVien>();
             try
             {
-                SqlDataReader reader = DButil.Query(sql, args);
+                SQLiteDataReader reader = DButil.Query(sql, args);
+
                 while (reader.Read())
                 {
                     NhanVien entity = new NhanVien();
-                    entity.MaNV = reader.GetString("MaNV");
-                    entity.TenNV = reader.GetString("TenNV");
-                    entity.TenDN = reader.GetString("TenDN");
+                    entity.MaNV = reader["MaNV"].ToString();
+                    entity.TenNV = reader["TenNV"].ToString();
+                    entity.TenDN = reader["TenDN"].ToString();
                     entity.SDT = reader["SDT"].ToString();
-                    entity.Email = reader.GetString("Email");
-                    entity.MatKhau = reader.GetString("MatKhau");
-                    entity.VaiTro = reader.GetBoolean("VaiTro");
-                    entity.TrangThai = reader.GetBoolean("TrangThai");
+                    entity.Email = reader["Email"].ToString();
+                    entity.MatKhau = reader["MatKhau"].ToString();
+                    entity.VaiTro = Convert.ToBoolean(reader["VaiTro"]);
+                    entity.TrangThai = Convert.ToBoolean(reader["TrangThai"]);
+
+
+                    
                     list.Add(entity);
                 }
             }
@@ -188,18 +185,10 @@ namespace DAL_QuanLyNganHang
 
         public string generateMaNhanVien()
         {
-            string prefix = "NV";
-            string sql = "SELECT MAX(MaNV) FROM NhanVien";
-            List<object> thamSo = new List<object>();
-            object result = DButil.ScalarQuery(sql, thamSo);
-            if (result != null && result.ToString().StartsWith(prefix))
-            {
-                string maxCode = result.ToString().Substring(2);
-                int newNumber = int.Parse(maxCode) + 1;
-                return $"{prefix}{newNumber:D3}";
-            }
-
-            return $"{prefix}001";
+            string sql = "SELECT MAX(CAST(SUBSTR(MaNV, 3) AS INT)) FROM NhanVien";
+            object result = DButil.ScalarQuery(sql, new List<object>());
+            int max = result != DBNull.Value ? Convert.ToInt32(result) : 0;
+            return $"NV{(max + 1).ToString("D3")}";
         }
     }
 }

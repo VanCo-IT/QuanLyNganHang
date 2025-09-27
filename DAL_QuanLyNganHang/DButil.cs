@@ -1,7 +1,8 @@
-﻿using Microsoft.Data.SqlClient;
+﻿//using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SQLite;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -11,11 +12,13 @@ namespace DAL_QuanLyNganHang
 {
     public class DButil
     {
-        private static string connectString = @"Data Source=ADMIN-PC\SQLEXPRESS;Initial Catalog=CSDL_QuanLyNganHang;Integrated Security=True;Trust Server Certificate=True";
-        public static SqlCommand GetCommand(string sql, List<object> args, CommandType cmdType)
+        public static string connectionString =
+        $@"Data Source={AppDomain.CurrentDomain.BaseDirectory}CSDL_QuanLyNganHang.db;Version=3;";
+
+        public static SQLiteCommand GetCommand(string sql, List<object> args, CommandType cmdType)
         {
-            SqlConnection conn = new SqlConnection(connectString);
-            SqlCommand cmd = new SqlCommand(sql, conn);
+            var conn = new SQLiteConnection(connectionString);
+            var cmd = new SQLiteCommand(sql, conn);
             cmd.CommandType = cmdType;
             for (int i = 0; i < args.Count; i++)
             {
@@ -26,10 +29,9 @@ namespace DAL_QuanLyNganHang
 
         public static void Update(string sql, List<object> args, CommandType cmdType = CommandType.Text)
         {
-            SqlCommand cmd = GetCommand(sql, args, cmdType);
+            SQLiteCommand cmd = GetCommand(sql, args, cmdType);
             cmd.Connection.Open();
-            SqlTransaction transaction = cmd.Connection.BeginTransaction();
-            cmd.Transaction = transaction;
+            cmd.Transaction = cmd.Connection.BeginTransaction();
             try
             {
                 cmd.ExecuteNonQuery();
@@ -49,7 +51,7 @@ namespace DAL_QuanLyNganHang
         {
             try
             {
-                SqlCommand cmd = GetCommand(sql, args, cmdType);
+                SQLiteCommand cmd = GetCommand(sql, args, cmdType);
                 cmd.Connection.Open();
                 return cmd.ExecuteScalar();
             }
@@ -59,27 +61,25 @@ namespace DAL_QuanLyNganHang
             }
         }
 
-        public static SqlDataReader Query(string sql, List<object> args, CommandType cmdType = CommandType.Text)
+        public static SQLiteDataReader Query(string sql, List<object> args, CommandType cmdType = CommandType.Text)
         {
-            try
+            var cmd = GetCommand(sql, args, cmdType);
+            Console.WriteLine("SQL: " + sql);
+            foreach (var p in args)
             {
-                SqlCommand cmd = GetCommand(sql, args, cmdType);
-                cmd.Connection.Open();
-                return cmd.ExecuteReader();
+                Console.WriteLine("Param: " + p);
             }
-            catch (Exception)
-            {
-                throw;
-            }
+            cmd.Connection.Open();
+            return cmd.ExecuteReader(CommandBehavior.CloseConnection);// sai?
         }
 
         public static T Value<T>(string sql, List<object> args, CommandType cmdType = CommandType.Text) where T : new()
         {
             try
             {
-                SqlCommand cmd = GetCommand(sql, args, cmdType);
+                SQLiteCommand cmd = GetCommand(sql, args, cmdType);
                 cmd.Connection.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
+                SQLiteDataReader reader = cmd.ExecuteReader();
 
                 if (reader.Read())
                 {

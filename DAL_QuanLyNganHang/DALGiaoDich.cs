@@ -1,5 +1,6 @@
 ﻿using DTO_QuanLyNganHang;
-using Microsoft.Data.SqlClient;
+//using Microsoft.Data.SqlClient;
+using System.Data.SQLite;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -16,17 +17,17 @@ namespace DAL_QuanLyNganHang
             List<GiaoDich> list = new List<GiaoDich>();
             try
             {
-                SqlDataReader reader = DButil.Query(sql, args);
+                SQLiteDataReader reader = DButil.Query(sql, args);
                 while (reader.Read())
                 {
                     GiaoDich entity = new GiaoDich();
                     entity.MaGD = reader["MaGD"].ToString();
-                    entity.SoTaiKhoan = reader.GetString("SoTaiKhoan");
+                    entity.SoTaiKhoan = reader["SoTaiKhoan"].ToString();
                     entity.NgayGD = Convert.ToDateTime(reader["NgayGD"]);
                     entity.SoTien = Convert.ToDecimal(reader["SoTien"]);
                     entity.LoaiGD = reader["LoaiGD"].ToString();
                     entity.MoTa = reader["Mota"].ToString();
-                    entity.TrangThai = reader.GetBoolean(reader.GetOrdinal("TrangThai"));
+                    entity.TrangThai = Convert.ToBoolean(reader["TrangThai"]);
                     list.Add(entity);
                 }
             }
@@ -111,7 +112,7 @@ namespace DAL_QuanLyNganHang
         {
             List<string> danhSachSoTaiKhoan = new List<string>();
             string sql = "SELECT SoTaiKhoan FROM TaiKhoan";
-            SqlDataReader reader = DButil.Query(sql, new List<object>());
+            SQLiteDataReader reader = DButil.Query(sql, new List<object>());
 
             while (reader.Read())
             {
