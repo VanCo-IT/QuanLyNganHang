@@ -64,6 +64,8 @@
             mnuTroGiup = new ToolStripMenuItem();
             chiNhánhToolStripMenuItem = new ToolStripMenuItem();
             pnMain = new Panel();
+            đangCậpNhậtToolStripMenuItem = new ToolStripMenuItem();
+            đangCậpNhậtToolStripMenuItem1 = new ToolStripMenuItem();
             statusStrip1.SuspendLayout();
             pnLeft.SuspendLayout();
             pnKhachHang.SuspendLayout();
@@ -239,7 +241,7 @@
             // 
             menuscriptMain.BackColor = Color.Cyan;
             menuscriptMain.Dock = DockStyle.Left;
-            menuscriptMain.Items.AddRange(new ToolStripItem[] { mnuHeThong, mnuKhachHang, mnuGiaoDich, mnuKhoanvay, mnuNhanVien, mnuTroGiup, chiNhánhToolStripMenuItem });
+            menuscriptMain.Items.AddRange(new ToolStripItem[] { mnuHeThong, mnuKhachHang, mnuGiaoDich, mnuNhanVien, chiNhánhToolStripMenuItem, mnuKhoanvay, mnuTroGiup });
             menuscriptMain.Location = new Point(0, 0);
             menuscriptMain.Name = "menuscriptMain";
             menuscriptMain.Size = new Size(115, 600);
@@ -252,7 +254,7 @@
             mnuHeThong.Font = new Font("Segoe UI", 12F);
             mnuHeThong.Image = (Image)resources.GetObject("mnuHeThong.Image");
             mnuHeThong.Name = "mnuHeThong";
-            mnuHeThong.Size = new Size(102, 25);
+            mnuHeThong.Size = new Size(113, 25);
             mnuHeThong.Text = "Hệ thống";
             // 
             // mnuHeThong_DoiMatKhau
@@ -293,7 +295,7 @@
             mnuKhachHang.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             mnuKhachHang.Image = (Image)resources.GetObject("mnuKhachHang.Image");
             mnuKhachHang.Name = "mnuKhachHang";
-            mnuKhachHang.Size = new Size(102, 23);
+            mnuKhachHang.Size = new Size(113, 23);
             mnuKhachHang.Text = "Khách hàng";
             // 
             // mnuKhachHang_QLKhachHang
@@ -317,17 +319,17 @@
             mnuGiaoDich.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             mnuGiaoDich.Image = (Image)resources.GetObject("mnuGiaoDich.Image");
             mnuGiaoDich.Name = "mnuGiaoDich";
-            mnuGiaoDich.Size = new Size(102, 23);
+            mnuGiaoDich.Size = new Size(113, 23);
             mnuGiaoDich.Text = "Giao dịch";
             mnuGiaoDich.Click += mnuGiaoDich_Click;
             // 
             // mnuKhoanvay
             // 
-            mnuKhoanvay.DropDownItems.AddRange(new ToolStripItem[] { mnuKhoanvay_DSKhoanVay, mnuKhoanvay_ThanhToanKhoanVay });
+            mnuKhoanvay.DropDownItems.AddRange(new ToolStripItem[] { mnuKhoanvay_DSKhoanVay, mnuKhoanvay_ThanhToanKhoanVay, đangCậpNhậtToolStripMenuItem });
             mnuKhoanvay.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             mnuKhoanvay.Image = (Image)resources.GetObject("mnuKhoanvay.Image");
             mnuKhoanvay.Name = "mnuKhoanvay";
-            mnuKhoanvay.Size = new Size(102, 23);
+            mnuKhoanvay.Size = new Size(113, 23);
             mnuKhoanvay.Text = "Khoản vay";
             // 
             // mnuKhoanvay_DSKhoanVay
@@ -349,24 +351,26 @@
             mnuNhanVien.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             mnuNhanVien.Image = (Image)resources.GetObject("mnuNhanVien.Image");
             mnuNhanVien.Name = "mnuNhanVien";
-            mnuNhanVien.Size = new Size(102, 23);
+            mnuNhanVien.Size = new Size(113, 23);
             mnuNhanVien.Text = "Nhân viên";
             mnuNhanVien.Click += mnuNhanVien_Click;
             // 
             // mnuTroGiup
             // 
+            mnuTroGiup.DropDownItems.AddRange(new ToolStripItem[] { đangCậpNhậtToolStripMenuItem1 });
             mnuTroGiup.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             mnuTroGiup.Image = (Image)resources.GetObject("mnuTroGiup.Image");
             mnuTroGiup.Name = "mnuTroGiup";
-            mnuTroGiup.Size = new Size(102, 23);
+            mnuTroGiup.Size = new Size(113, 23);
             mnuTroGiup.Text = "Trợ giúp";
             // 
             // chiNhánhToolStripMenuItem
             // 
+            chiNhánhToolStripMenuItem.Font = new Font("Segoe UI", 12F);
             chiNhánhToolStripMenuItem.Image = (Image)resources.GetObject("chiNhánhToolStripMenuItem.Image");
             chiNhánhToolStripMenuItem.Name = "chiNhánhToolStripMenuItem";
-            chiNhánhToolStripMenuItem.Size = new Size(102, 20);
-            chiNhánhToolStripMenuItem.Text = "Chi nhánh?";
+            chiNhánhToolStripMenuItem.Size = new Size(102, 25);
+            chiNhánhToolStripMenuItem.Text = "Chi nhánh";
             chiNhánhToolStripMenuItem.Click += chiNhánhToolStripMenuItem_Click;
             // 
             // pnMain
@@ -379,6 +383,18 @@
             pnMain.Name = "pnMain";
             pnMain.Size = new Size(900, 600);
             pnMain.TabIndex = 5;
+            // 
+            // đangCậpNhậtToolStripMenuItem
+            // 
+            đangCậpNhậtToolStripMenuItem.Name = "đangCậpNhậtToolStripMenuItem";
+            đangCậpNhậtToolStripMenuItem.Size = new Size(211, 24);
+            đangCậpNhậtToolStripMenuItem.Text = "Đang cập nhật";
+            // 
+            // đangCậpNhậtToolStripMenuItem1
+            // 
+            đangCậpNhậtToolStripMenuItem1.Name = "đangCậpNhậtToolStripMenuItem1";
+            đangCậpNhậtToolStripMenuItem1.Size = new Size(180, 24);
+            đangCậpNhậtToolStripMenuItem1.Text = "Đang cập nhật";
             // 
             // frmMain
             // 
@@ -441,5 +457,7 @@
         private ToolStripMenuItem mnuTroGiup;
         private Panel pnMain;
         private ToolStripMenuItem chiNhánhToolStripMenuItem;
+        private ToolStripMenuItem đangCậpNhậtToolStripMenuItem;
+        private ToolStripMenuItem đangCậpNhậtToolStripMenuItem1;
     }
 }
