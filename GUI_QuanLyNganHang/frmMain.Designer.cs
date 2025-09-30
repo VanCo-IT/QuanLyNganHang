@@ -242,7 +242,7 @@
             menuscriptMain.Items.AddRange(new ToolStripItem[] { mnuHeThong, mnuKhachHang, mnuGiaoDich, mnuKhoanvay, mnuNhanVien, mnuTroGiup, chiNhánhToolStripMenuItem });
             menuscriptMain.Location = new Point(0, 0);
             menuscriptMain.Name = "menuscriptMain";
-            menuscriptMain.Size = new Size(126, 600);
+            menuscriptMain.Size = new Size(115, 600);
             menuscriptMain.TabIndex = 4;
             menuscriptMain.Text = "menuStrip2";
             // 
@@ -372,10 +372,12 @@
             // pnMain
             // 
             pnMain.BackColor = Color.White;
+            pnMain.BackgroundImage = (Image)resources.GetObject("pnMain.BackgroundImage");
+            pnMain.BackgroundImageLayout = ImageLayout.Stretch;
             pnMain.Dock = DockStyle.Fill;
-            pnMain.Location = new Point(126, 0);
+            pnMain.Location = new Point(115, 0);
             pnMain.Name = "pnMain";
-            pnMain.Size = new Size(889, 600);
+            pnMain.Size = new Size(900, 600);
             pnMain.TabIndex = 5;
             // 
             // frmMain

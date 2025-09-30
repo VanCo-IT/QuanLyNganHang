@@ -84,9 +84,9 @@ namespace GUI_QuanLyNganHang
         private void mnuHeThong_DoiMatKhau_Click(object sender, EventArgs e)
         {
             //code này hiện frmDoiMatKhau chứ ko nằm trong frmMain
-            //frmDoiMatKhau reset = new frmDoiMatKhau();
-            //reset.ShowDialog();
-            openChildForm(new frmDoiMatKhau());
+            frmDoiMatKhau reset = new frmDoiMatKhau();
+            reset.ShowDialog();
+            //openChildForm(new frmDoiMatKhau());
         }
 
         private void mnuHeThong_DangXuat_Click(object sender, EventArgs e)
