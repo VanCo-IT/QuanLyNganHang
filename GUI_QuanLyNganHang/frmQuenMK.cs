@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BLL_QuanLyNganHang;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,21 +24,41 @@ namespace GUI_QuanLyNganHang
 
         private void btnXacMinhEmail_Click(object sender, EventArgs e)
         {
-            // Tạo mã xác minh ngẫu nhiên
-            Random rnd = new Random();
-            maXacMinh = rnd.Next(100000, 999999).ToString();
+            string email = EmailDangQuen?.Trim();
 
-            // Gửi email
+            if (string.IsNullOrWhiteSpace(email))
+            {
+                MessageBox.Show("Vui lòng nhập email.");
+                return;
+            }
+
+            BUSNhanVien busNV = new BUSNhanVien();
+
+            // Kiểm tra email có trong danh sách nhân viên/quản lý không
+            bool tonTai = busNV.KiemTraEmailTonTai(email);
+
+            if (!tonTai)
+            {
+                MessageBox.Show("Email này không thuộc nhân viên hoặc quản lý trong hệ thống.");
+                return;
+            }
+
+            // Nếu hợp lệ thì mới gửi email
+            Random rnd = new Random();
+            string maXacMinh = rnd.Next(100000, 999999).ToString();
+
             EmailSender emailService = new EmailSender();
             string error;
-            bool result = emailService.SendVerificationCode(EmailDangQuen, maXacMinh, out error);
+            bool result = emailService.SendVerificationCode(email, maXacMinh, out error);
 
             if (result)
             {
                 MessageBox.Show("Mã xác minh đã được gửi đến email của bạn!");
-                frmNhapMa frm = new frmNhapMa();
-                frm.MaDuocGui = maXacMinh;
-                frm.EmailDangXacThuc = EmailDangQuen;
+                frmNhapMa frm = new frmNhapMa
+                {
+                    MaDuocGui = maXacMinh,
+                    EmailDangXacThuc = email
+                };
                 frm.ShowDialog();
                 this.Close();
             }
@@ -46,6 +67,5 @@ namespace GUI_QuanLyNganHang
                 MessageBox.Show($"Lỗi khi gửi email: {error}");
             }
         }
-
     }
 }

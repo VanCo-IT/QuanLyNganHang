@@ -105,5 +105,13 @@ namespace BLL_QuanLyNganHang
                 return "Lỗi: " + ex.Message;
             }
         }
+        public bool KiemTraEmailTonTai(string email)
+        {
+            if (string.IsNullOrWhiteSpace(email))
+                return false;
+
+            return dalNhanVien.checkEmailExists(email);
+        }
+
     }
 }

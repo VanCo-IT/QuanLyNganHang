@@ -92,3 +92,4 @@ D:\VanCo\A_QuanLyNganHang\QuanLyNganHang\GUI_QuanLyNganHang\bin\Debug\net8.0-win
 D:\VanCo\A_QuanLyNganHang\QuanLyNganHang\GUI_QuanLyNganHang\bin\Debug\net8.0-windows\runtimes\osx-x64\native\SQLite.Interop.dll
 D:\VanCo\A_QuanLyNganHang\QuanLyNganHang\GUI_QuanLyNganHang\bin\Debug\net8.0-windows\runtimes\win-x64\native\SQLite.Interop.dll
 D:\VanCo\A_QuanLyNganHang\QuanLyNganHang\GUI_QuanLyNganHang\bin\Debug\net8.0-windows\runtimes\win-x86\native\SQLite.Interop.dll
+D:\VanCo\A_QuanLyNganHang\QuanLyNganHang\GUI_QuanLyNganHang\obj\Debug\net8.0-windows\GUI_QuanLyNganHang.frmDatLaiMK.resources

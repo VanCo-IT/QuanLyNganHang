@@ -24,10 +24,9 @@ namespace GUI_QuanLyNganHang
             if (txtMaXacMinh.Text == MaDuocGui)
             {
                 MessageBox.Show("Xác minh thành công!");
-                frmDoiMatKhau frmDoiMK = new frmDoiMatKhau();
-                frmDoiMK.EmailDangDoi = EmailDangXacThuc;
+                frmDatLaiMK frmDatLai = new frmDatLaiMK(EmailDangXacThuc);
                 this.Hide();
-                frmDoiMK.ShowDialog();
+                frmDatLai.ShowDialog();
                 this.Close();
             }
             else
