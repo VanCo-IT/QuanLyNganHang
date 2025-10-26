@@ -71,6 +71,7 @@ namespace GUI_QuanLyNganHang
         }
         private void ExportToPDF(string filePath)
         {
+            System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
             using (FileStream fs = new FileStream(filePath, FileMode.Create))
             {
                 var doc = new iTextSharp.text.Document(iTextSharp.text.PageSize.A4);
@@ -79,7 +80,7 @@ namespace GUI_QuanLyNganHang
 
                 // Sử dụng font Tahoma (có hỗ trợ tiếng Việt) từ thư mục Fonts của Windows
                 string fontPath = Environment.GetFolderPath(Environment.SpecialFolder.Fonts) + @"\tahoma.ttf";
-                var bf = iTextSharp.text.pdf.BaseFont.CreateFont(fontPath, iTextSharp.text.pdf.BaseFont.IDENTITY_H, iTextSharp.text.pdf.BaseFont.EMBEDDED);
+                var bf = iTextSharp.text.pdf.BaseFont.CreateFont(fontPath, iTextSharp.text.pdf.BaseFont.IDENTITY_H, iTextSharp.text.pdf.BaseFont.EMBEDDED);// sai?
                 var font = new iTextSharp.text.Font(bf, 12);
                 var fontTitle = new iTextSharp.text.Font(bf, 16, iTextSharp.text.Font.BOLD);
 
